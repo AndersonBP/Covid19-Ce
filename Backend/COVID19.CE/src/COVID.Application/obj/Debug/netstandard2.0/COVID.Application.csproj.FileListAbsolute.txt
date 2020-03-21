@@ -1,0 +1,8 @@
+C:\Users\User\source\repos\COVID19.CE\src\COVID.Application\bin\Debug\netstandard2.0\COVID.Application.deps.json
+C:\Users\User\source\repos\COVID19.CE\src\COVID.Application\bin\Debug\netstandard2.0\COVID.Application.dll
+C:\Users\User\source\repos\COVID19.CE\src\COVID.Application\obj\Debug\netstandard2.0\COVID.Application.csprojAssemblyReference.cache
+C:\Users\User\source\repos\COVID19.CE\src\COVID.Application\obj\Debug\netstandard2.0\COVID.Application.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\COVID19.CE\src\COVID.Application\obj\Debug\netstandard2.0\COVID.Application.AssemblyInfo.cs
+C:\Users\User\source\repos\COVID19.CE\src\COVID.Application\bin\Debug\netstandard2.0\COVID.Application.pdb
+C:\Users\User\source\repos\COVID19.CE\src\COVID.Application\obj\Debug\netstandard2.0\COVID.Application.dll
+C:\Users\User\source\repos\COVID19.CE\src\COVID.Application\obj\Debug\netstandard2.0\COVID.Application.pdb

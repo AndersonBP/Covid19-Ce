@@ -1,0 +1,52 @@
+.panel {
+  margin: 0em 0.5em 1em 0.5em;
+  width: 100%;
+}
+
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+}
+
+.dashboard > mat-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.contact {
+  margin-top: 1em;;
+}
+
+.contact > mat-card > mat-card-content {
+  margin-top: 1em;
+}
+
+.contact > mat-card > mat-card-content div {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.panel-data {
+  font-size: 40px;
+  font-weight: 500;
+  padding: 10px 0px;
+}
+
+.deaths {
+  color: darkorange;
+}
+
+.recovered {
+  color: green;
+}
+
+.confirmed {
+  color: red;
+}
