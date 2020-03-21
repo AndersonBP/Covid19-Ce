@@ -6,3 +6,11 @@ C:\Users\User\source\repos\COVID19.CE\src\COVID.Domain\obj\Debug\netstandard2.0\
 C:\Users\User\source\repos\COVID19.CE\src\COVID.Domain\obj\Debug\netstandard2.0\COVID.Domain.AssemblyInfo.cs
 C:\Users\User\source\repos\COVID19.CE\src\COVID.Domain\obj\Debug\netstandard2.0\COVID.Domain.dll
 C:\Users\User\source\repos\COVID19.CE\src\COVID.Domain\obj\Debug\netstandard2.0\COVID.Domain.pdb
+C:\MyRepo\ProjCovid\Covid19-Ce\Backend\COVID19.CE\src\COVID.Domain\bin\Debug\netstandard2.0\COVID.Domain.deps.json
+C:\MyRepo\ProjCovid\Covid19-Ce\Backend\COVID19.CE\src\COVID.Domain\bin\Debug\netstandard2.0\COVID.Domain.dll
+C:\MyRepo\ProjCovid\Covid19-Ce\Backend\COVID19.CE\src\COVID.Domain\bin\Debug\netstandard2.0\COVID.Domain.pdb
+C:\MyRepo\ProjCovid\Covid19-Ce\Backend\COVID19.CE\src\COVID.Domain\obj\Debug\netstandard2.0\COVID.Domain.csprojAssemblyReference.cache
+C:\MyRepo\ProjCovid\Covid19-Ce\Backend\COVID19.CE\src\COVID.Domain\obj\Debug\netstandard2.0\COVID.Domain.AssemblyInfoInputs.cache
+C:\MyRepo\ProjCovid\Covid19-Ce\Backend\COVID19.CE\src\COVID.Domain\obj\Debug\netstandard2.0\COVID.Domain.AssemblyInfo.cs
+C:\MyRepo\ProjCovid\Covid19-Ce\Backend\COVID19.CE\src\COVID.Domain\obj\Debug\netstandard2.0\COVID.Domain.dll
+C:\MyRepo\ProjCovid\Covid19-Ce\Backend\COVID19.CE\src\COVID.Domain\obj\Debug\netstandard2.0\COVID.Domain.pdb

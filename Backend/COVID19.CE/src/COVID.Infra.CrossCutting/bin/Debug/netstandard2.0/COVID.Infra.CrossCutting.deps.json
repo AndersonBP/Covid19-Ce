@@ -10,6 +10,7 @@
       "COVID.Infra.CrossCutting/1.0.0": {
         "dependencies": {
           "AutoMapper": "9.0.0",
+          "COVID.Application": "1.0.0",
           "COVID.Infra.Data": "1.0.0",
           "Microsoft.AspNetCore.Http": "2.2.2",
           "Microsoft.Extensions.DependencyInjection": "3.1.2",
@@ -612,6 +613,15 @@
         }
       },
       "System.ValueTuple/4.5.0": {},
+      "COVID.Application/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "9.0.0",
+          "COVID.Domain": "1.0.0"
+        },
+        "runtime": {
+          "COVID.Application.dll": {}
+        }
+      },
       "COVID.Domain/1.0.0": {
         "runtime": {
           "COVID.Domain.dll": {}
@@ -1044,6 +1054,11 @@
       "sha512": "sha512-okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
       "path": "system.valuetuple/4.5.0",
       "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
+    },
+    "COVID.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "COVID.Domain/1.0.0": {
       "type": "project",

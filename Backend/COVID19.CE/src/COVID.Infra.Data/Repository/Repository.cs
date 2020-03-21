@@ -1,15 +1,14 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Linq.Expressions;
 using COVID.Domain.Interfaces;
 using COVID.Infra.Data.Context;
-using COVID.Domain.Entities.Base;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
 namespace COVID.Infra.Data.Repository
 {
-    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : EntityBase
+  public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         protected CovidContext Db;
         protected DbSet<TEntity> DbSet;

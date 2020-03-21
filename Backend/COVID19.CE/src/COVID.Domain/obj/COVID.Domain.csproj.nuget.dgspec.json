@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj": {}
+    "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj": {
+    "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj",
+        "projectUniqueName": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj",
         "projectName": "COVID.Domain",
-        "projectPath": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj",
+        "projectPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Domain\\obj\\",
+        "outputPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

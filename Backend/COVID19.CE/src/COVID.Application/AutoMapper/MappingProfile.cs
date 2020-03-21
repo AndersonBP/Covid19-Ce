@@ -1,12 +1,14 @@
-﻿using AutoMapper;
+using AutoMapper;
+using COVID.Domain.Entities;
+using COVID.Application.ViewModels;
 
 namespace COVID.Application.AutoMapper
 {
-    public class MappingProfile : Profile
+  public class MappingProfile : Profile
+  {
+    public MappingProfile()
     {
-        public MappingProfile()
-        {
-            //CreateMap<Entity, EntityViewModel>().ReverseMap();
-        }
+      CreateMap<Caso, CasoViewModel>().ReverseMap();
     }
+  }
 }
