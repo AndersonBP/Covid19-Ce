@@ -23,7 +23,7 @@ namespace COVID.Infra.Data.Mappings
       builder.Property(i => i.Obito).HasColumnName("obito");
       builder.Property(i => i.Data).HasColumnName("data");
 
-      builder.ToTable("public.casos");
+      builder.ToTable("casos");
     }
   }
 }

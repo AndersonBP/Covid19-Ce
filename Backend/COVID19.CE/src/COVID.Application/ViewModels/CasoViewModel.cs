@@ -6,15 +6,15 @@ namespace COVID.Application.ViewModels
   {
     public Guid Id { get; set; }
 
-    public char UF { get; set; }
+    public string UF { get; set; }
     public int Cidade { get; set; }
     public string Bairro { get; set; }
-    public char Sexo { get; set; }
+    public string Sexo { get; set; }
     public int FaixaEtaria { get; set; }
-    public bool Suspeito { get; set; }
-    public bool Confirmado { get; set; }
-    public bool Descartado { get; set; }
-    public bool Obito { get; set; }
+    public int Suspeito { get; set; }
+    public int Confirmado { get; set; }
+    public int Descartado { get; set; }
+    public int Obito { get; set; }
     public DateTime Date { get; set; }
   }
 }

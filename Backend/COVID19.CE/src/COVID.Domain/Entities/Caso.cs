@@ -14,16 +14,16 @@ namespace COVID.Domain.Entities
     //public virtual Cidade Cidade { get; set; }
 
     public string Bairro { get; set; }
-    public char Sexo { get; set; }
+    public string Sexo { get; set; }
 
-    public int FaixaEtaria { get; set; }
+    public int? FaixaEtaria { get; set; }
     //public int FaixaEtariaId { get; set; }
     //public virtual FaixaEtaria FaixaEtaria { get; set; }
 
-    public bool Suspeito { get; set; }
-    public bool Confirmado { get; set; }
-    public bool Descartado { get; set; }
-    public bool Obito { get; set; }
+    public int Suspeito { get; set; }
+    public int Confirmado { get; set; }
+    public int Descartado { get; set; }
+    public int Obito { get; set; }
     public DateTime Data { get; set; }
   }
 }
