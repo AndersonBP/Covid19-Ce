@@ -4,10 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from './core/core.module';
 
-const appRoutes: Routes = [
-  { path: '**', component: HomeComponent }
-];
 
 
 @NgModule({
@@ -16,9 +15,8 @@ const appRoutes: Routes = [
     HomeComponent
   ],
   imports: [
-    RouterModule.forRoot(
-      appRoutes,
-    ),
+    AppRoutingModule,
+    CoreModule,
     BrowserModule
   ],
   providers: [],
