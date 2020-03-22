@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,7 +19,7 @@ import { PanelComponent } from './home/panel/panel.component';
     AppComponent,
     HomeComponent,
     MapComponent,
-    ChartComponent
+    ChartComponent,
     PanelComponent
   ],
   imports: [
