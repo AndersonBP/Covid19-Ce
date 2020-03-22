@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Service.Api\\COVID.Service.Api.csproj": {}
+    "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Service.Api\\COVID.Service.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Application\\COVID.Application.csproj": {
+    "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Application\\COVID.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Application\\COVID.Application.csproj",
+        "projectUniqueName": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Application\\COVID.Application.csproj",
         "projectName": "COVID.Application",
-        "projectPath": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Application\\COVID.Application.csproj",
+        "projectPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Application\\COVID.Application.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Application\\obj\\",
+        "outputPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -31,7 +31,11 @@
         },
         "frameworks": {
           "netstandard2.0": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj": {
+                "projectPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -68,14 +72,14 @@
         }
       }
     },
-    "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj": {
+    "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj",
+        "projectUniqueName": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj",
         "projectName": "COVID.Domain",
-        "projectPath": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj",
+        "projectPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Domain\\obj\\",
+        "outputPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -128,14 +132,14 @@
         }
       }
     },
-    "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Infra.CrossCutting\\COVID.Infra.CrossCutting.csproj": {
+    "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Infra.CrossCutting\\COVID.Infra.CrossCutting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Infra.CrossCutting\\COVID.Infra.CrossCutting.csproj",
+        "projectUniqueName": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Infra.CrossCutting\\COVID.Infra.CrossCutting.csproj",
         "projectName": "COVID.Infra.CrossCutting",
-        "projectPath": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Infra.CrossCutting\\COVID.Infra.CrossCutting.csproj",
+        "projectPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Infra.CrossCutting\\COVID.Infra.CrossCutting.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Infra.CrossCutting\\obj\\",
+        "outputPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Infra.CrossCutting\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -156,8 +160,11 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Infra.Data\\COVID.Infra.Data.csproj": {
-                "projectPath": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Infra.Data\\COVID.Infra.Data.csproj"
+              "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Application\\COVID.Application.csproj": {
+                "projectPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Application\\COVID.Application.csproj"
+              },
+              "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Infra.Data\\COVID.Infra.Data.csproj": {
+                "projectPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Infra.Data\\COVID.Infra.Data.csproj"
               }
             }
           }
@@ -204,14 +211,14 @@
         }
       }
     },
-    "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Infra.Data\\COVID.Infra.Data.csproj": {
+    "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Infra.Data\\COVID.Infra.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Infra.Data\\COVID.Infra.Data.csproj",
+        "projectUniqueName": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Infra.Data\\COVID.Infra.Data.csproj",
         "projectName": "COVID.Infra.Data",
-        "projectPath": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Infra.Data\\COVID.Infra.Data.csproj",
+        "projectPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Infra.Data\\COVID.Infra.Data.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Infra.Data\\obj\\",
+        "outputPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Infra.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -232,8 +239,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj": {
-                "projectPath": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj"
+              "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj": {
+                "projectPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj"
               }
             }
           }
@@ -292,14 +299,14 @@
         }
       }
     },
-    "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Service.Api\\COVID.Service.Api.csproj": {
+    "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Service.Api\\COVID.Service.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Service.Api\\COVID.Service.Api.csproj",
+        "projectUniqueName": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Service.Api\\COVID.Service.Api.csproj",
         "projectName": "COVID.Service.Api",
-        "projectPath": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Service.Api\\COVID.Service.Api.csproj",
+        "projectPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Service.Api\\COVID.Service.Api.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Service.Api\\obj\\",
+        "outputPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Service.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -320,11 +327,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Application\\COVID.Application.csproj": {
-                "projectPath": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Application\\COVID.Application.csproj"
+              "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Application\\COVID.Application.csproj": {
+                "projectPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Application\\COVID.Application.csproj"
               },
-              "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Infra.CrossCutting\\COVID.Infra.CrossCutting.csproj": {
-                "projectPath": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Infra.CrossCutting\\COVID.Infra.CrossCutting.csproj"
+              "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Infra.CrossCutting\\COVID.Infra.CrossCutting.csproj": {
+                "projectPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Infra.CrossCutting\\COVID.Infra.CrossCutting.csproj"
               }
             }
           }
@@ -353,6 +360,10 @@
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.9.10, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

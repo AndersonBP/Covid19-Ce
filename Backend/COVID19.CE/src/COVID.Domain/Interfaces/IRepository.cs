@@ -1,11 +1,10 @@
-﻿using System;
+using System;
 using System.Linq.Expressions;
 using System.Collections.Generic;
-using COVID.Domain.Entities.Base;
 
 namespace COVID.Domain.Interfaces
 {
-    public interface IRepository<TEntity> : IDisposable where TEntity : EntityBase
+    public interface IRepository<TEntity> : IDisposable where TEntity : class
     {
         void Add(TEntity obj);
         TEntity GetById(Guid id);

@@ -155,6 +155,16 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
+      },
+      "COVID.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/COVID.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/COVID.Domain.dll": {}
+        }
       }
     }
   },
@@ -928,11 +938,17 @@
         "system.threading.tasks.4.3.0.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
+    },
+    "COVID.Domain/1.0.0": {
+      "type": "project",
+      "path": "../COVID.Domain/COVID.Domain.csproj",
+      "msbuildProject": "../COVID.Domain/COVID.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "AutoMapper >= 9.0.0",
+      "COVID.Domain >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -943,11 +959,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Application\\COVID.Application.csproj",
+      "projectUniqueName": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Application\\COVID.Application.csproj",
       "projectName": "COVID.Application",
-      "projectPath": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Application\\COVID.Application.csproj",
+      "projectPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Application\\COVID.Application.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\COVID19.CE\\src\\COVID.Application\\obj\\",
+      "outputPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -967,7 +983,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj": {
+              "projectPath": "C:\\MyRepo\\ProjCovid\\Covid19-Ce\\Backend\\COVID19.CE\\src\\COVID.Domain\\COVID.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
