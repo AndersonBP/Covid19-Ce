@@ -16,7 +16,7 @@ namespace COVID.Infra.Data.Repository
 
     public IEnumerable<TotalGeralUf> ObterPorUf(string uf)
     {
-      var sql = $"select * from totalufdata where uf = '{uf.ToUpper()}'";
+      var sql = $"select * from totalufdata where uf = '{uf.ToUpper()}' order by data desc";
 
       var total = Db.Database.GetDbConnection().Query<TotalGeralUf>(sql);
 
