@@ -30,5 +30,7 @@ namespace COVID.Application.ViewModels
     public long Suspeitos { get; set; }
     public long Descartados { get; set; }
     public string NomeCidade { get; set; }
+    public decimal Latitude { get; set; }
+    public decimal Longitude { get; set; }
   }
 }

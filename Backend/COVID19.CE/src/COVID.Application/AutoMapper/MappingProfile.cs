@@ -1,5 +1,6 @@
 using AutoMapper;
 using COVID.Domain.Entities;
+using COVID.Domain.Entities.Views;
 using COVID.Application.ViewModels;
 
 namespace COVID.Application.AutoMapper
@@ -9,8 +10,8 @@ namespace COVID.Application.AutoMapper
     public MappingProfile()
     {
       CreateMap<Caso, CasoViewModel>().ReverseMap();
-      CreateMap<Domain.Entities.Views.Totais.Total, RegiaoViewModel>()
-        .ReverseMap();
+      CreateMap<TotalGeralUf, TotalGeralUfViewModel>().ReverseMap();
+      CreateMap<Domain.Entities.Views.Totais.Total, RegiaoViewModel>().ReverseMap();
     }
   }
 }

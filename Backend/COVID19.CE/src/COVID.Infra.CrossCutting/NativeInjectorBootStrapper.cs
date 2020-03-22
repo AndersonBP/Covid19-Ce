@@ -20,9 +20,11 @@ namespace COVID.Infra.CrossCutting
       // Application
       services.AddScoped<ICasoService, CasoService>();
       services.AddScoped<ITotalRegiaoService, TotalRegiaoService>();
+      services.AddScoped<ITotalGeralUfService, TotalGeralUfService>();
 
 
       // Infra - Data
+      services.AddScoped<ITotalGeralUfRepository, TotalGeralUfRepository>();
       services.AddScoped<ITotalRegiaoRepository, TotalRegiaoRepository>();
       services.AddScoped<ICasoRepository, CasoRepository>();
       services.AddScoped<IUnitOfWork, UnitOfWork>();

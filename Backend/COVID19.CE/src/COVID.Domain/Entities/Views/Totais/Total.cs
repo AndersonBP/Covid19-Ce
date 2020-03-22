@@ -27,6 +27,9 @@ namespace COVID.Domain.Entities.Views.Totais
     public long Suspeitos { get; set; }
     public string NomeCidade { get; set; }
 
+    public decimal Latitude { get; set; }
+    public decimal Longitude { get; set; }
+
     public virtual ICollection<Regiao> Regioes { get; set; }
 
     //public void AtribuirEndereco(Regiao regiao)
