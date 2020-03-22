@@ -12,6 +12,8 @@ import { MapComponent } from './home/map/map.component';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { ChartComponent } from './home/chart/chart.component';
 import { PanelComponent } from './home/panel/panel.component';
+import { BlockUIModule } from 'ng-block-ui';
+import { NgxLoadingModule } from 'ngx-loading';
 
 
 @NgModule({
@@ -28,7 +30,10 @@ import { PanelComponent } from './home/panel/panel.component';
     CoreModule,
     BrowserModule,
     BrowserAnimationsModule,
-    Ng2GoogleChartsModule
+    Ng2GoogleChartsModule,
+    BlockUIModule.forRoot(),
+    NgxLoadingModule.forRoot({
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

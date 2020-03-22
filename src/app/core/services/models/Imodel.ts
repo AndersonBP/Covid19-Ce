@@ -1,3 +1,0 @@
-interface IModel {
-  toJSON(): string
-}

@@ -20,8 +20,8 @@ export class ChartComponent implements OnInit {
       chartType: "ColumnChart",
       dataTable: [
         ["Country", "Infectados", "Óbitos"],
-        ["Fortaleza", 76, 0],
-        ["Aquiraz", 4, 0],
+        ["Fortaleza", 116, 0],
+        ["Aquiraz", 5, 0],
         ["Sobral", 1, 0],
         ["Fortim", 1, 0],
         ["Juazeiro do Norte", 1, 0]
@@ -45,7 +45,8 @@ export class ChartComponent implements OnInit {
         ["18/03", 19, 0],
         ["19/03", 24, 0],
         ["20/03", 67, 0],
-        ["21/03", 83, 0]
+        ["21/03", 83, 0],
+        ["22/03", 125, 0]
       ],
       options: {
         backgroundColor: "white",
