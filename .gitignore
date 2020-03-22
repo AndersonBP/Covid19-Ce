@@ -60,3 +60,19 @@ Backend/COVID19.CE/src/COVID.Infra.CrossCutting/obj/
 Backend/COVID19.CE/src/COVID.Infra.Data/obj/
 
 Backend/COVID19.CE/src/COVID.Service.Api/obj/
+
+Backend/COVID19.CE/src/COVID.Service.AlternativeApi/obj/
+
+Backend/COVID19.CE/.vs/COVID19.CE/v16/
+
+Backend/COVID19.CE/src/COVID.Application/bin/Debug/netstandard2.0/
+
+Backend/COVID19.CE/src/COVID.Domain/bin/Debug/netstandard2.0/
+
+Backend/COVID19.CE/src/COVID.Infra.CrossCutting/bin/Debug/netstandard2.0/
+
+Backend/COVID19.CE/src/COVID.Infra.Data/bin/Debug/netstandard2.0/
+
+Backend/COVID19.CE/src/COVID.Service.AlternativeApi/bin/Debug/netcoreapp3.0/
+
+Backend/COVID19.CE/src/COVID.Service.Api/bin/Debug/netcoreapp3.1/
