@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapComponent } from './home/map/map.component';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import { ChartComponent } from './home/chart/chart.component';
 
 
 
@@ -17,7 +19,8 @@ import { MapComponent } from './home/map/map.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    MapComponent
+    MapComponent,
+    ChartComponent
   ],
   imports: [
     MaterialModule,
@@ -25,6 +28,7 @@ import { MapComponent } from './home/map/map.component';
     CoreModule,
     BrowserModule,
     BrowserAnimationsModule,
+    Ng2GoogleChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
