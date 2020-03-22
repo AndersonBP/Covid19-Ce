@@ -10,8 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapComponent } from './home/map/map.component';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import { ChartComponent } from './home/chart/chart.component';
 import { PanelComponent } from './home/panel/panel.component';
-
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { PanelComponent } from './home/panel/panel.component';
     AppComponent,
     HomeComponent,
     MapComponent,
+    ChartComponent
     PanelComponent
   ],
   imports: [
@@ -27,6 +29,7 @@ import { PanelComponent } from './home/panel/panel.component';
     CoreModule,
     BrowserModule,
     BrowserAnimationsModule,
+    Ng2GoogleChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
