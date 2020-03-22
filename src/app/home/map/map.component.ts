@@ -12,7 +12,11 @@ import VectorSource from "ol/source/Vector";
 import VectorLayer from "ol/layer/Vector";
 import IconAnchorUnits from "ol/style/IconAnchorUnits";
 import { AfterViewInit, Component } from "@angular/core";
-
+import OSM from "ol/source/OSM";
+import { focus } from "ol/events/condition";
+import { MouseWheelZoom, defaults, DragPan } from "ol/interaction";
+import Circle from "ol/geom/Circle";
+import CircleStyle from "ol/style/Circle";
 @Component({
   selector: "home-map",
   templateUrl: "./map.component.html",
@@ -35,73 +39,65 @@ export class MapComponent implements AfterViewInit {
   ];
 
   ngAfterViewInit() {
-    // this.map.setTarget('map');
     this.vectorSource = new VectorSource();
-
     this.vectorLayer = new VectorLayer({
       source: this.vectorSource
     });
     this.map = new Map({
+      interactions: defaults({
+        onFocusOnly: true
+      }),
       target: "map",
       layers: [
         new TileLayer({
-          source: new XYZ({
-            url: "https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          })
+          source: new OSM()
         }),
         this.vectorLayer
       ],
       view: new View({
         center: olProj.fromLonLat([-38.563203, -3.834106]),
-        zoom: 7
-      }),
-      controls: defaultControls().extend([
-        new ZoomToExtent({
-          extent: [
-            813079.7791264898,
-            5929220.284081122,
-            848966.9639063801,
-            5936863.986909639
-          ]
-        })
-      ])
+        zoom: 11
+      })
     });
     this.casos.forEach(el => {
-      this._createMarker(el);
+      this._createCircle(el);
     });
   }
 
-  private _createMarker(pt: any) {
-    const point = new Feature({
-      geometry: new Point(olProj.fromLonLat(pt.Coordenadas)),
-      name: JSON.stringify(pt)
+  private _createCircle(pt: any) {
+    let myStlye = new Style({
+      fill: new Fill({
+        color: "rgba(255,100,50,0.5)"
+      }),
+      stroke: new Stroke({
+        color: "#ff0000",
+        width: 3
+      }),
+      text: new Text({
+        font: "Normal 15px Arial",
+        textAlign: "center",
+        textBaseline: "middle",
+        text: `${pt.Nome} - ${pt.Total.toString()}`,
+        fill: new Fill({
+          color: "#ffa500"
+        }),
+        stroke: new Stroke({
+          color: "#000000",
+          width: 3
+        }),
+        // offsetX: -45,
+        rotation: 0
+      })
     });
 
-    let iconStyles = [
-      // new Style({
-      //   image: new Icon({
-      //     size: [100, 100],
-      //     anchor: [0.75, 0.5],
-      //     anchorXUnits: IconAnchorUnits.FRACTION,
-      //     anchorYUnits: IconAnchorUnits.PIXELS,
-      //     src: "../../assets/imgs/pin.png"
-      //   })
-      // }),
-      new Style({
-        text: new Text({
-          text: `${pt.Nome} - ${pt.Total.toString()}`,
-          offsetY: 1,
-          fill: new Fill({
-            color: "#eb4634"
-          }),
-          stroke: new Stroke({
-            color: "#ebae34",
-            width: 1.0
-          })
-        })
-      })
-    ];
-    point.setStyle(iconStyles);
-    this.vectorSource.addFeature(point);
+    let circleSource = new VectorSource();
+    let circleLayer = new VectorLayer({
+      style: myStlye,
+      source: circleSource
+    });
+    this.map.addLayer(circleLayer);
+    circleSource.addFeature(
+      new Feature(new Circle(olProj.fromLonLat(pt.Coordenadas), 2000))
+    );
   }
 }

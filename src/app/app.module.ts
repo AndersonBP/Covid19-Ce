@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapComponent } from './home/map/map.component';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { ChartComponent } from './home/chart/chart.component';
-
+import { PanelComponent } from './home/panel/panel.component';
 
 
 @NgModule({
@@ -21,6 +21,7 @@ import { ChartComponent } from './home/chart/chart.component';
     HomeComponent,
     MapComponent,
     ChartComponent
+    PanelComponent
   ],
   imports: [
     MaterialModule,

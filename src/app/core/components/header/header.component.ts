@@ -6,9 +6,7 @@ import { Component, OnInit } from "@angular/core";
     <nav class="navbar">
       <!-- logo -->
       <div class="navbar-brand">
-        <a class="navbar-item">
-          <!-- <img src="https://bulma.io/images/bulma-logo.png" /> -->
-        </a>
+        <h3 class="float-left">Monitoramento Covid19 Ceará</h3>
       </div>
     </nav>
   `,
