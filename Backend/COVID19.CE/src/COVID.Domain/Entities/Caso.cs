@@ -18,11 +18,11 @@ namespace COVID.Domain.Entities
     //public int FaixaEtariaId { get; set; }
     //public virtual FaixaEtaria FaixaEtaria { get; set; }
 
-    public int Suspeito { get; set; }
-    public int Confirmado { get; set; }
-    public int Descartado { get; set; }
-    public int Recuperado { get; set; }
-    public int Obito { get; set; }
+    public int? Suspeito { get; set; }
+    public int? Confirmado { get; set; }
+    public int? Descartado { get; set; }
+    public int? Recuperado { get; set; }
+    public int? Obito { get; set; }
     public DateTime Data { get; set; }
   }
 }

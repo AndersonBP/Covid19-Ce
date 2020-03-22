@@ -29,5 +29,6 @@ namespace COVID.Application.ViewModels
     public long Recuperados { get; set; }
     public long Suspeitos { get; set; }
     public long Descartados { get; set; }
+    public string NomeCidade { get; set; }
   }
 }

@@ -27,6 +27,7 @@ namespace COVID.Infra.Data.Mappings
       builder.Property(i => i.Recuperados).HasColumnName("recuperados");
       builder.Property(i => i.Suspeitos).HasColumnName("suspeitos");
       builder.Property(i => i.Descartados).HasColumnName("descartados");
+      builder.Property(i => i.NomeCidade).HasColumnName("nome_cidade");
 
     }
   }
