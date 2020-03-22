@@ -17,6 +17,8 @@ import { focus } from "ol/events/condition";
 import { MouseWheelZoom, defaults, DragPan } from "ol/interaction";
 import Circle from "ol/geom/Circle";
 import CircleStyle from "ol/style/Circle";
+import TileSource from "ol/source/Tile";
+import TileImage from "ol/source/TileImage";
 @Component({
   selector: "home-map",
   templateUrl: "./map.component.html",
@@ -27,8 +29,8 @@ export class MapComponent implements AfterViewInit {
   vectorSource: any;
   vectorLayer: any;
   casos: { Nome: string; Coordenadas: number[]; Total: number }[] = [
-    { Nome: "Fortaleza", Total: 63, Coordenadas: [-38.532846, -3.776984] },
-    { Nome: "Aquiraz", Total: 1, Coordenadas: [-38.392024, -3.91484] },
+    { Nome: "Fortaleza", Total: 76, Coordenadas: [-38.532846, -3.776984] },
+    { Nome: "Aquiraz", Total: 4, Coordenadas: [-38.392024, -3.91484] },
     { Nome: "Fortim", Total: 1, Coordenadas: [-38.0072816, -4.4628603] },
     {
       Nome: "Juazeiro do Norte",
@@ -56,7 +58,8 @@ export class MapComponent implements AfterViewInit {
       ],
       view: new View({
         center: olProj.fromLonLat([-38.563203, -3.834106]),
-        zoom: 11
+        zoom: 10,
+        minZoom: 6
       })
     });
     this.casos.forEach(el => {
