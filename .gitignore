@@ -44,3 +44,19 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+Backend/COVID19.CE/.vs/COVID19.CE/v16/Server/sqlite3/
+
+Backend/COVID19.CE/src/COVID.Application/obj/Debug/netstandard2.0/
+
+Backend/COVID19.CE/src/COVID.Application/obj/
+
+*.cache
+
+Backend/COVID19.CE/src/COVID.Domain/obj/
+
+Backend/COVID19.CE/src/COVID.Infra.CrossCutting/obj/
+
+Backend/COVID19.CE/src/COVID.Infra.Data/obj/
+
+Backend/COVID19.CE/src/COVID.Service.Api/obj/
