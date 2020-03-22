@@ -76,3 +76,5 @@ Backend/COVID19.CE/src/COVID.Infra.Data/bin/Debug/netstandard2.0/
 Backend/COVID19.CE/src/COVID.Service.AlternativeApi/bin/Debug/netcoreapp3.0/
 
 Backend/COVID19.CE/src/COVID.Service.Api/bin/Debug/netcoreapp3.1/
+
+Backend/COVID19.CE/.vs/COVID19.CE/DesignTimeBuild/
