@@ -5,6 +5,7 @@ using COVID.Infra.Data.Mappings;
 using COVID.Infra.Data.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using COVID.Domain.Entities.Views;
 
 namespace COVID.Infra.Data.Context
 {
@@ -12,11 +13,13 @@ namespace COVID.Infra.Data.Context
   {
     public DbSet<Caso> Casos { get; set; }
     public DbSet<Domain.Entities.Views.Totais.Total> Totais { get; set; }
+    public DbSet<TotalGeralUf> TotalGeralUf { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
       modelBuilder.AddConfiguration(new CasoMapping());
       modelBuilder.AddConfiguration(new TotalMapping());
+      modelBuilder.AddConfiguration(new TotalGeralUfMapping());
 
       base.OnModelCreating(modelBuilder);
     }

@@ -8,10 +8,8 @@ namespace COVID.Infra.Data.Mappings
   {
     public override void Map(EntityTypeBuilder<Domain.Entities.Views.Totais.Total> builder)
     {
-      //builder.HasKey(i => i.Id);
       builder.HasNoKey();
-      builder.ToView("totalregiao");
-
+      
       builder.Property(i => i.TotalRecuperados).HasColumnName("totalrecuperados");
       builder.Property(i => i.TotalObitos).HasColumnName("totalobitos");
       builder.Property(i => i.TotalInfectados).HasColumnName("totalinfectados");
@@ -27,7 +25,12 @@ namespace COVID.Infra.Data.Mappings
       builder.Property(i => i.Recuperados).HasColumnName("recuperados");
       builder.Property(i => i.Suspeitos).HasColumnName("suspeitos");
       builder.Property(i => i.Descartados).HasColumnName("descartados");
+      builder.Property(i => i.NomeCidade).HasColumnName("nome_cidade");
 
+      builder.Property(i => i.Latitude).HasColumnName("latitude");
+      builder.Property(i => i.Longitude).HasColumnName("longitude");
+
+      builder.ToView("totalregiao");
     }
   }
 }

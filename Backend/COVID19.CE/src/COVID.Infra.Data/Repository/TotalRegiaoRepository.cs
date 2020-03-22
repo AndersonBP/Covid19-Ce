@@ -13,29 +13,29 @@ namespace COVID.Infra.Data.Repository
     {
     }
 
-    public override IEnumerable<Domain.Entities.Views.Totais.Total> GetAll()
-    {
-      var sql = "select * from totalregiao ";
+    //public override IEnumerable<Domain.Entities.Views.Totais.Total> GetAll()
+    //{
+    //  var sql = "select * from totalregiao ";
 
-      var total = Db.Database.GetDbConnection().Query<Domain.Entities.Views.Totais.Total>(sql);
+    //  var total = Db.Database.GetDbConnection().Query<Domain.Entities.Views.Totais.Total>(sql);
 
-      return total.ToList();
+    //  return total.ToList();
 
-      //IEnumerable<Domain.Entities.Views.Totais.Total> totais = null;
-      //using (var multi = Db.Database.GetDbConnection().QueryMultiple(sql))
-      //{
-      //  totais = multi.Read<Domain.Entities.Views.Totais.Total>().Dump();
-      //  if (totais != null)
-      //  {
-      //    var regioes = multi.Read<Domain.Entities.Views.Totais.Regiao>().ToList();
-      //    foreach (var total in totais)
-      //    {
-      //      total.Regioes = regioes;
-      //    }
-      //  }
-      //}
+    //  //IEnumerable<Domain.Entities.Views.Totais.Total> totais = null;
+    //  //using (var multi = Db.Database.GetDbConnection().QueryMultiple(sql))
+    //  //{
+    //  //  totais = multi.Read<Domain.Entities.Views.Totais.Total>().Dump();
+    //  //  if (totais != null)
+    //  //  {
+    //  //    var regioes = multi.Read<Domain.Entities.Views.Totais.Regiao>().ToList();
+    //  //    foreach (var total in totais)
+    //  //    {
+    //  //      total.Regioes = regioes;
+    //  //    }
+    //  //  }
+    //  //}
 
-      //return totais;
-    }
+    //  //return totais;
+    //}
   }
 }

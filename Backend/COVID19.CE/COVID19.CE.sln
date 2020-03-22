@@ -17,15 +17,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 - CrossCutting", "{64B0F289-F698-4D74-BB70-62FB4E8859CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COVID.Application", "src\COVID.Application\COVID.Application.csproj", "{D4DA265B-A478-42E8-BDB6-6AACF1CF9B1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "COVID.Application", "src\COVID.Application\COVID.Application.csproj", "{D4DA265B-A478-42E8-BDB6-6AACF1CF9B1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COVID.Domain", "src\COVID.Domain\COVID.Domain.csproj", "{F24BFADD-93F7-404E-9283-9B957143DFF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "COVID.Domain", "src\COVID.Domain\COVID.Domain.csproj", "{F24BFADD-93F7-404E-9283-9B957143DFF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COVID.Infra.Data", "src\COVID.Infra.Data\COVID.Infra.Data.csproj", "{CD8A3F81-D047-4C17-9005-41A794888F79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "COVID.Infra.Data", "src\COVID.Infra.Data\COVID.Infra.Data.csproj", "{CD8A3F81-D047-4C17-9005-41A794888F79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COVID.Infra.CrossCutting", "src\COVID.Infra.CrossCutting\COVID.Infra.CrossCutting.csproj", "{6CA249B0-6B4A-428A-8E1D-8DED9C5A4690}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "COVID.Infra.CrossCutting", "src\COVID.Infra.CrossCutting\COVID.Infra.CrossCutting.csproj", "{6CA249B0-6B4A-428A-8E1D-8DED9C5A4690}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COVID.Service.Api", "src\COVID.Service.Api\COVID.Service.Api.csproj", "{424D4B82-201A-4B44-BFB9-B41BD3AC051D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "COVID.Service.Api", "src\COVID.Service.Api\COVID.Service.Api.csproj", "{424D4B82-201A-4B44-BFB9-B41BD3AC051D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COVID.Service.AlternativeApi", "src\COVID.Service.AlternativeApi\COVID.Service.AlternativeApi.csproj", "{5B246455-9F79-4269-9844-A28973A2684E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{424D4B82-201A-4B44-BFB9-B41BD3AC051D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{424D4B82-201A-4B44-BFB9-B41BD3AC051D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{424D4B82-201A-4B44-BFB9-B41BD3AC051D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B246455-9F79-4269-9844-A28973A2684E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B246455-9F79-4269-9844-A28973A2684E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B246455-9F79-4269-9844-A28973A2684E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B246455-9F79-4269-9844-A28973A2684E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{CD8A3F81-D047-4C17-9005-41A794888F79} = {E7C3E0D2-FB8F-4088-80F5-A41B0714D090}
 		{6CA249B0-6B4A-428A-8E1D-8DED9C5A4690} = {64B0F289-F698-4D74-BB70-62FB4E8859CE}
 		{424D4B82-201A-4B44-BFB9-B41BD3AC051D} = {39C14886-A5AC-46CC-BD2D-3A7793C77E05}
+		{5B246455-9F79-4269-9844-A28973A2684E} = {39C14886-A5AC-46CC-BD2D-3A7793C77E05}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D9B5832B-93FA-43EA-9739-043AA2D330DC}

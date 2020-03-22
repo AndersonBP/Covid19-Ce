@@ -25,6 +25,10 @@ namespace COVID.Domain.Entities.Views.Totais
     public long Obitos { get; set; }
     public long Recuperados { get; set; }
     public long Suspeitos { get; set; }
+    public string NomeCidade { get; set; }
+
+    public decimal Latitude { get; set; }
+    public decimal Longitude { get; set; }
 
     public virtual ICollection<Regiao> Regioes { get; set; }
 
