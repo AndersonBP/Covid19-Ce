@@ -10,6 +10,6 @@ export class HomeComponent implements OnInit {
   constructor(private boletimService: BoletimService) {}
 
   ngOnInit(): void {
-    this.boletimService.getTotais()
+    this.boletimService.getTotais();
   }
 }

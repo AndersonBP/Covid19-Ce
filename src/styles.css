@@ -9,7 +9,8 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.ol-unselectable {
+.ol-unselectable,
+.ol-layer {
   z-index: 999 !important;
 }
 
