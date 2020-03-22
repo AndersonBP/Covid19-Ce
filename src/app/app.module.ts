@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapComponent } from './home/map/map.component';
+import { PanelComponent } from './home/panel/panel.component';
 
 
 
@@ -17,7 +18,8 @@ import { MapComponent } from './home/map/map.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    MapComponent
+    MapComponent,
+    PanelComponent
   ],
   imports: [
     MaterialModule,
