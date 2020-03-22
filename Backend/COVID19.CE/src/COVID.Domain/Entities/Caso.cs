@@ -1,7 +1,5 @@
 using COVID.Domain.Entities.Base;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace COVID.Domain.Entities
 {
@@ -23,6 +21,7 @@ namespace COVID.Domain.Entities
     public int Suspeito { get; set; }
     public int Confirmado { get; set; }
     public int Descartado { get; set; }
+    public int Recuperado { get; set; }
     public int Obito { get; set; }
     public DateTime Data { get; set; }
   }

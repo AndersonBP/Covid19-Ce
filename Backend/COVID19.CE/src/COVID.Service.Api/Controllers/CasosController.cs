@@ -14,10 +14,12 @@ namespace COVID.Service.Api.Controllers
   public class CasosController : ControllerBase
   {
     private readonly ICasoService _casoService;
+    private readonly ITotalRegiaoService _totalRegiaoService;
 
-    public CasosController(ICasoService casoService)
+    public CasosController(ICasoService casoService, ITotalRegiaoService totalRegiaoService)
     {
       _casoService = casoService;
+      _totalRegiaoService = totalRegiaoService;
     }
 
     [HttpGet]
@@ -30,6 +32,12 @@ namespace COVID.Service.Api.Controllers
     public CasoViewModel Get(Guid id)
     {
       return  _casoService.GetById(id);
+    }
+
+    [HttpGet("totais")]
+    public IEnumerable<TotalRegiaoViewModel> Totais()
+    {
+      return _totalRegiaoService.Total();
     }
 
     //[HttpPost]

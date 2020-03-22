@@ -9,6 +9,8 @@ namespace COVID.Application.AutoMapper
     public MappingProfile()
     {
       CreateMap<Caso, CasoViewModel>().ReverseMap();
+      CreateMap<Domain.Entities.Views.Totais.Total, RegiaoViewModel>()
+        .ReverseMap();
     }
   }
 }

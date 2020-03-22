@@ -20,6 +20,7 @@ namespace COVID.Infra.Data.Mappings
       builder.Property(i => i.Suspeito).HasColumnName("suspeito");
       builder.Property(i => i.Confirmado).HasColumnName("confirmado");
       builder.Property(i => i.Descartado).HasColumnName("descartado");
+      builder.Property(i => i.Recuperado).HasColumnName("recuperado");
       builder.Property(i => i.Obito).HasColumnName("obito");
       builder.Property(i => i.Data).HasColumnName("data");
 

@@ -11,10 +11,12 @@ namespace COVID.Infra.Data.Context
   public class CovidContext : DbContext
   {
     public DbSet<Caso> Casos { get; set; }
+    public DbSet<Domain.Entities.Views.Totais.Total> Totais { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
       modelBuilder.AddConfiguration(new CasoMapping());
+      modelBuilder.AddConfiguration(new TotalMapping());
 
       base.OnModelCreating(modelBuilder);
     }
