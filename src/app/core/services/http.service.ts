@@ -9,16 +9,13 @@ import { map } from "rxjs/operators";
 export class HttpService {
   protected readonly BASE_URL: URL = new URL(environment.ApiUrl);
 
-  constructor(private _http: Http, private loading: LoadingService) {
-    console.log(this.BASE_URL)
-  }
+  constructor(private _http: Http, private loading: LoadingService) {}
 
   private getEndpoint(path): string {
     return this.BASE_URL + path;
   }
 
   public get(uri: string, baseUrl?: string): Observable<any> {
-    debugger
     this.loading.show();
     return new Observable<any>(observer => {
       this._http

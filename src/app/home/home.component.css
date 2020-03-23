@@ -6,18 +6,10 @@ mat-card {
 
 mat-card > div {
   display: flex;
-  flex-direction: row;
-  flex: 1;
-}
-
-.panel {
-  display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.map {
-  display: flex;
-  flex-direction: column;
-  flex: 3;
-}
+/* .panel {}
+
+.map {} */
