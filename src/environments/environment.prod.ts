@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  ApiUrl: 'http://localhost:4070/api/v1/'
+  ApiUrl: 'https://api.mapacovid19.com/api/v1/api/',
+  BASE_URL: '/api'
 };
