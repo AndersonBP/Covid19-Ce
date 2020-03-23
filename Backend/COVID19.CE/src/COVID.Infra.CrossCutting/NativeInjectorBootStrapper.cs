@@ -21,12 +21,14 @@ namespace COVID.Infra.CrossCutting
       services.AddScoped<ICasoService, CasoService>();
       services.AddScoped<ITotalRegiaoService, TotalRegiaoService>();
       services.AddScoped<ITotalGeralUfService, TotalGeralUfService>();
+      services.AddScoped<IBairrosAfetadosService, BairrosAfetadosService>();
 
 
       // Infra - Data
       services.AddScoped<ITotalGeralUfRepository, TotalGeralUfRepository>();
       services.AddScoped<ITotalRegiaoRepository, TotalRegiaoRepository>();
       services.AddScoped<ICasoRepository, CasoRepository>();
+      services.AddScoped<IBairrosAfetadosRepository, BairrosAfetadosRepository>();
       services.AddScoped<IUnitOfWork, UnitOfWork>();
       services.AddScoped<CovidContext>();
     }

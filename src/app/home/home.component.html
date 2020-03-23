@@ -1,9 +1,9 @@
 <mat-grid-list rowHeight="220px" cols="4">
   <mat-grid-tile rowspan="2" class="panel ">
-    <home-panel></home-panel>
+    <home-panel [boletim]="ultimoBoletim"></home-panel>
   </mat-grid-tile>
   <mat-grid-tile rowspan="2" class="" colspan="3">
-    <home-map></home-map>
+    <home-map [bairrosAfetados]="bairroAfetados"></home-map>
   </mat-grid-tile>
   <mat-grid-tile colspan="4">
     <home-chart></home-chart>

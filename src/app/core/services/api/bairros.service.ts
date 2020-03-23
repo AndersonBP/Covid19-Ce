@@ -1,3 +1,4 @@
+import { BairroAfetadoModel } from './models/bairroAfetado.model';
 import { Response } from "./models/response.model";
 import { BoletimModel } from "./models/boletim.model";
 import { HttpService } from "../http.service";
@@ -6,15 +7,15 @@ import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
 
 @Injectable()
-export class BoletimService {
+export class BairrosService {
   constructor(private http: HttpService) {}
 
-  public getTotais(): Observable<Response<BoletimModel[]>> {
-    return this.http.get("casos/totalgeral/ce").pipe(
+  public getAfetados(): Observable<Response<BairroAfetadoModel[]>> {
+    return this.http.get("casos/bairrosafetados/fortaleza").pipe(
       map(res => {
-        const response = new Response<BoletimModel[]>();
+        const response = new Response<BairroAfetadoModel[]>();
         response.Data = res.map(el => {
-          return BoletimModel.Create(el);
+          return BairroAfetadoModel.Create(el);
         });
         return response;
       })
