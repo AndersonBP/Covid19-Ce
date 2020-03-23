@@ -1,6 +1,10 @@
-.chart-container {
-  float: left;
-  width: 700px;
+mat-card {
+  display: flex;
+  flex: 1;
+  margin-top: .5em;
+  margin-left: .5em;
 }
 
-
+.chart {
+  flex: 1;
+}

@@ -1,0 +1,40 @@
+mat-card {
+  margin-top: .5em;
+}
+
+mat-accordion {
+  overflow-y: hidden;
+  max-height: 790px;
+}
+
+mat-card > mat-card-content {
+  margin-top: 1.2em;
+}
+
+mat-card > mat-card-content div {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.contact-title {
+  margin-top: 0px !important;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.contact-title > span {
+  flex: 2;
+}
+
+.contact-title > span+span {
+  flex: 1;
+}
+
+mat-expansion-panel-header {
+  display: flex;
+  padding: 0 0.6em;
+  font-size: .9em;
+}

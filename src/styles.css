@@ -3,8 +3,7 @@
 html,
 body {
   height: 100%;
-}
-body {
+  background: #F8F7FA;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
@@ -14,24 +13,13 @@ body {
   z-index: 999 !important;
 }
 
-body {
-  background: #383535;
-}
-
-.mat-grid-tile .mat-figure {
-  /* justify-content: flex-start !important ; */
-  align-items: flex-start !important;
-}
-
-/*---------------------------*/
-
 @media only screen and (max-width: 800px) {
   /* For tablets: */
 }
 @media only screen and (max-width: 500px) {
   /* For mobile phones: */
   /* Cards */
-  .mat-card {
+  /* .mat-card {
     max-width: 47px;
     max-height: 47px;
   }
@@ -42,6 +30,9 @@ body {
   .mat-card-content {
     font-size: small !important;
     padding: 0px 0px !important;
-  }
+  } */
   /* Cards */
 }
+
+
+/* #211D25, #4D4852, #FCEAFF, #00C9AA */

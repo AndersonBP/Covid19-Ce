@@ -1,4 +1,4 @@
-.navbar-brand {
+/* .navbar-brand {
   width: 100%;
   background-color: black;
   margin-top: -7px;
@@ -9,23 +9,29 @@ h3 {
   color: white;
   text-align: center;
   padding: 20px;
-}
+} */
 
 @media only screen and (max-width: 800px) {
   /* For tablets: */
-  .navbar-brand {
+  /* .navbar-brand {
     height: 77px;
   }
   h3 {
     font-size: x-large;
-  }
+  } */
 }
 @media only screen and (max-width: 500px) {
   /* For mobile phones: */
-  .navbar-brand {
+  /* .navbar-brand {
     height: 50px;
   }
   h3 {
     font-size: medium;
-  }
+  } */
+}
+
+.app-bar {
+  background-color: #211D25 !important;
+  color: #FFFFFF !important;
+  justify-content: center;
 }

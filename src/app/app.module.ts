@@ -11,7 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapComponent } from './home/map/map.component';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { ChartComponent } from './home/chart/chart.component';
-import { PanelComponent } from './home/panel/panel.component';
+import { DiagnoticPlaceComponent } from './home/diagnotic-place/diagnotic-place.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { BlockUIModule } from 'ng-block-ui';
 import { NgxLoadingModule } from 'ngx-loading';
 
@@ -22,7 +23,8 @@ import { NgxLoadingModule } from 'ngx-loading';
     HomeComponent,
     MapComponent,
     ChartComponent,
-    PanelComponent
+    DiagnoticPlaceComponent,
+    DashboardComponent
   ],
   imports: [
     MaterialModule,

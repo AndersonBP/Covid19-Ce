@@ -7,7 +7,12 @@ import { GoogleChartInterface } from "ng2-google-charts/google-charts-interfaces
   styleUrls: ["./chart.component.css"]
 })
 export class ChartComponent implements OnInit {
-  constructor() {}
+  constructor() {
+    window.onresize = (e) =>
+    {
+      this.load();
+    };
+  }
   public ColumnChart: GoogleChartInterface;
   public lineChart: GoogleChartInterface;
 
@@ -27,13 +32,14 @@ export class ChartComponent implements OnInit {
         ["Juazeiro do Norte", 1, 0]
       ],
       options: {
+        legend: { position: 'top', alignment: 'center' },
         backgroundColor: "white",
         title: "Cidades",
-        animation: {
-          duration: 1000,
-          easing: "out",
-          startup: true
-        }
+        // animation: {
+        //   duration: 1000,
+        //   // easing: "out",
+        //   startup: true
+        // }
       }
     };
     this.lineChart = {
@@ -49,6 +55,7 @@ export class ChartComponent implements OnInit {
         ["22/03", 124, 0]
       ],
       options: {
+        legend: { position: 'top', alignment: 'center' },
         backgroundColor: "white",
         title: "Contaminação"
       }
