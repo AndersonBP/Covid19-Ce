@@ -7,7 +7,12 @@ import { GoogleChartInterface } from "ng2-google-charts/google-charts-interfaces
   styleUrls: ["./chart.component.css"]
 })
 export class ChartComponent implements OnInit {
-  constructor() {}
+  constructor() {
+    window.onresize = (e) =>
+    {
+      this.load();
+    };
+  }
   public ColumnChart: GoogleChartInterface;
   public lineChart: GoogleChartInterface;
 
@@ -30,11 +35,11 @@ export class ChartComponent implements OnInit {
         legend: { position: 'top', alignment: 'center' },
         backgroundColor: "white",
         title: "Cidades",
-        animation: {
-          duration: 1000,
-          easing: "out",
-          startup: true
-        }
+        // animation: {
+        //   duration: 1000,
+        //   // easing: "out",
+        //   startup: true
+        // }
       }
     };
     this.lineChart = {

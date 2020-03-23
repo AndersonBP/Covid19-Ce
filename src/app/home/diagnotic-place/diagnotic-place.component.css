@@ -1,8 +1,17 @@
-.contact > mat-card-content {
+mat-card {
+  margin-top: .5em;
+}
+
+mat-accordion {
+  overflow-y: hidden;
+  max-height: 790px;
+}
+
+mat-card > mat-card-content {
   margin-top: 1.2em;
 }
 
-.contact > mat-card-content div {
+mat-card > mat-card-content div {
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -27,5 +36,5 @@
 mat-expansion-panel-header {
   display: flex;
   padding: 0 0.6em;
-  font-size: 1em;
+  font-size: .9em;
 }

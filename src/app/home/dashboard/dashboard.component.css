@@ -1,7 +1,7 @@
 .dashboard {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 1em;
+  flex-direction: column;
 }
 
 .dashboard > mat-card {

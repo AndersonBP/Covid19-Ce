@@ -1,5 +1,23 @@
-.main {
+mat-card {
   padding: .5em;
   border-radius: 0px;
   background-color: #F8F7FA;
+}
+
+mat-card > div {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.map {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
 }
