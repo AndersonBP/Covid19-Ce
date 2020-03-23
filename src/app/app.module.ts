@@ -5,13 +5,16 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapComponent } from './home/map/map.component';
-import { PanelComponent } from './home/panel/panel.component';
-
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import { ChartComponent } from './home/chart/chart.component';
+import { DiagnoticPlaceComponent } from './home/diagnotic-place/diagnotic-place.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
+import { BlockUIModule } from 'ng-block-ui';
+import { NgxLoadingModule } from 'ngx-loading';
 
 
 @NgModule({
@@ -19,7 +22,9 @@ import { PanelComponent } from './home/panel/panel.component';
     AppComponent,
     HomeComponent,
     MapComponent,
-    PanelComponent
+    ChartComponent,
+    DiagnoticPlaceComponent,
+    DashboardComponent
   ],
   imports: [
     MaterialModule,
@@ -27,6 +32,10 @@ import { PanelComponent } from './home/panel/panel.component';
     CoreModule,
     BrowserModule,
     BrowserAnimationsModule,
+    Ng2GoogleChartsModule,
+    BlockUIModule.forRoot(),
+    NgxLoadingModule.forRoot({
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

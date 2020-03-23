@@ -7,13 +7,14 @@
   <ItemGroup>
     <Folder Include="DTO\" />
     <Folder Include="Helper\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\COVID.Domain\COVID.Domain.csproj" />
   </ItemGroup>
 
 </Project>

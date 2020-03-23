@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace COVID.Domain.Entities.Base
 {
