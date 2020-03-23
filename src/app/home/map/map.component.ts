@@ -1,15 +1,5 @@
 import { AfterViewInit, Component, Input } from "@angular/core";
 
-import { defaults as defaultControls, FullScreen } from "ol/control";
-import XYZ from "ol/source/XYZ";
-import ZoomToExtent from "ol/control/ZoomToExtent";
-import Point from "ol/geom/Point";
-import IconAnchorUnits from "ol/style/IconAnchorUnits";
-import { focus } from "ol/events/condition";
-import CircleStyle from "ol/style/Circle";
-import TileSource from "ol/source/Tile";
-import TileImage from "ol/source/TileImage";
-
 import Map from "ol/Map";
 import View from "ol/View";
 import TileLayer from "ol/layer/Tile";
