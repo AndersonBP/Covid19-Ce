@@ -1,3 +1,4 @@
+import { BairrosService } from './services/api/bairros.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -19,6 +20,7 @@ import { LoadingService } from './services/loading.service';
     HttpService,
     LoadingService,
     BoletimService,
+    BairrosService
   ],
   declarations: [
     HeaderComponent,

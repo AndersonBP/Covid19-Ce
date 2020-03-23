@@ -16,13 +16,15 @@ namespace COVID.Service.Api.Controllers
     private readonly ICasoService _casoService;
     private readonly ITotalRegiaoService _totalRegiaoService;
     private readonly ITotalGeralUfService _totalGeralUfService;
+    private readonly IBairrosAfetadosService _bairrosAfetadosService;
 
-    public CasosController(ICasoService casoService, ITotalRegiaoService totalRegiaoService,
+    public CasosController(ICasoService casoService, ITotalRegiaoService totalRegiaoService, IBairrosAfetadosService bairrosAfetadosService,
       ITotalGeralUfService totalGeralUfService)
     {
       _casoService = casoService;
       _totalRegiaoService = totalRegiaoService;
       _totalGeralUfService = totalGeralUfService;
+      this._bairrosAfetadosService = bairrosAfetadosService;
     }
 
     [HttpGet]
@@ -65,6 +67,12 @@ namespace COVID.Service.Api.Controllers
     public IEnumerable<TotalRegiaoViewModel> TotalCidadePorUf(string uf)
     {
       return _totalRegiaoService.Total();
+    }
+
+    [HttpGet("bairrosafetados/{cidade}")]
+    public IEnumerable<BairrosAfetadosViewModel> BairrosAfetados(string cidade)
+    {
+      return this._bairrosAfetadosService.BuscarPorCidade(cidade);
     }
 
     //[HttpPost]
