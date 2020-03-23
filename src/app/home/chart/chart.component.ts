@@ -27,6 +27,7 @@ export class ChartComponent implements OnInit {
         ["Juazeiro do Norte", 1, 0]
       ],
       options: {
+        legend: { position: 'top', alignment: 'center' },
         backgroundColor: "white",
         title: "Cidades",
         animation: {
@@ -48,6 +49,7 @@ export class ChartComponent implements OnInit {
         ["21/03", 83, 0]
       ],
       options: {
+        legend: { position: 'top', alignment: 'center' },
         backgroundColor: "white",
         title: "Contaminação"
       }

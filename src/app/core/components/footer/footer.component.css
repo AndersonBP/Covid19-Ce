@@ -1,19 +1,17 @@
 p {
-  color: white;
   text-align: center;
   font-size: small;
   margin: 0 0 2px;
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  background-color: black;
+a {
+  color: #FFFFFF;
 }
 
-
-a{
-  color: white;
+footer {
+  padding: 12px;
+  font-size: 12px;
+  margin-top: 40px;
+  background: #211D25;
+  color: #FFFFFF;
 }
