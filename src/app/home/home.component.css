@@ -10,6 +10,13 @@ mat-card > div {
   flex: 1;
 }
 
-/* .panel {}
+.home {
+  /* display: flex;
+  flex-direction: column; */
+}
 
-.map {} */
+/* .panel {} */
+
+.map {
+  height: 100%;
+}

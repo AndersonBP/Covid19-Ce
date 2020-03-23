@@ -1,21 +1,28 @@
 .dashboard {
+  position: absolute;
+  z-index: 9999;
+  top: 7%;
+  left: 10%;
+
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
 
 .dashboard > mat-card {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  align-items: center;
-  margin: 1px
+  padding: 12px;
+  width: 88px;
+  margin: 10px;
+  text-align: center;
 }
 
 .panel-data {
-  font-size: 30px;
   font-weight: 500;
   padding: 10px 0px;
+}
+
+.number {
+  font-size: 30px;
 }
 
 .deaths {

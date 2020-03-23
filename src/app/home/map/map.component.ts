@@ -1,28 +1,32 @@
-import { BairroAfetadoModel } from "./../../core/services/api/models/bairroAfetado.model";
-import { defaults as defaultControls } from "ol/control";
-import Map from "ol/Map";
-import View from "ol/View";
-import TileLayer from "ol/layer/Tile";
+import { AfterViewInit, Component, Input } from "@angular/core";
+
+import { defaults as defaultControls, FullScreen } from "ol/control";
 import XYZ from "ol/source/XYZ";
 import ZoomToExtent from "ol/control/ZoomToExtent";
-import * as olProj from "ol/proj";
-import { Feature } from "ol";
 import Point from "ol/geom/Point";
-import { Icon, Style, Stroke, Text, Fill } from "ol/style";
-import VectorSource from "ol/source/Vector";
-import VectorLayer from "ol/layer/Vector";
 import IconAnchorUnits from "ol/style/IconAnchorUnits";
-import { AfterViewInit, Component, Input } from "@angular/core";
-import OSM from "ol/source/OSM";
 import { focus } from "ol/events/condition";
-import { MouseWheelZoom, defaults, DragPan } from "ol/interaction";
-import Circle from "ol/geom/Circle";
 import CircleStyle from "ol/style/Circle";
 import TileSource from "ol/source/Tile";
 import TileImage from "ol/source/TileImage";
+
+import Map from "ol/Map";
+import View from "ol/View";
+import TileLayer from "ol/layer/Tile";
+import * as olProj from "ol/proj";
+import { Feature } from "ol";
+import { Icon, Style, Stroke, Text, Fill } from "ol/style";
+import VectorSource from "ol/source/Vector";
+import VectorLayer from "ol/layer/Vector";
+import OSM from "ol/source/OSM";
+import { MouseWheelZoom, defaults, DragPan } from "ol/interaction";
+import Circle from "ol/geom/Circle";
 import { Coordinate } from "ol/coordinate";
 import Polygon from "ol/geom/Polygon";
 import LineString from "ol/geom/LineString";
+
+import { BairroAfetadoModel } from "./../../core/services/api/models/bairroAfetado.model";
+import { BoletimModel } from 'src/app/core/services/api/models/boletim.model';
 @Component({
   selector: "home-map",
   templateUrl: "./map.component.html",
@@ -30,6 +34,7 @@ import LineString from "ol/geom/LineString";
 })
 export class MapComponent implements AfterViewInit {
   @Input() bairrosAfetados: BairroAfetadoModel[] = [];
+  @Input() boletim = new BoletimModel();
 
   map: Map;
   vectorSource: any;

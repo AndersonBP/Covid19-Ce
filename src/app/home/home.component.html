@@ -10,16 +10,14 @@
   </mat-grid-tile>
 </mat-grid-list> -->
 
-<mat-card>
-  <div>
-    <div class="map">
-      <home-map [bairrosAfetados]="bairroAfetados"></home-map>
-      <home-chart></home-chart>
-    </div>
-    <div class="panel">
-      <home-dashboard [boletim]="ultimoBoletim"></home-dashboard>
-      <!-- <home-panel [boletim]="ultimoBoletim"></home-panel> -->
-      <home-diagnotic></home-diagnotic>
-    </div>
-  </div>
-</mat-card>
+<div class="map">
+  <home-map [bairrosAfetados]="bairroAfetados" [boletim]="ultimoBoletim"></home-map>
+  <!-- <home-chart></home-chart> -->
+</div>
+<div class="panel">
+  <!-- <home-dashboard [boletim]="ultimoBoletim"></home-dashboard> -->
+  <!-- <home-panel [boletim]="ultimoBoletim"></home-panel> -->
+  <!-- <home-diagnotic></home-diagnotic> -->
+</div>
+<!-- <mat-card>
+</mat-card> -->
