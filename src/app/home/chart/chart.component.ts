@@ -14,6 +14,8 @@ export class ChartComponent implements OnInit {
     Obitos: number;
   }[] = [];
 
+  toggled = true;
+
   constructor() {
     window.onresize = e => {
       this.load();
@@ -62,5 +64,9 @@ export class ChartComponent implements OnInit {
         title: "Contaminação"
       }
     };
+  }
+
+  toggleDiv() {
+    this.toggled = !this.toggled;
   }
 }

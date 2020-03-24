@@ -9,7 +9,8 @@ a {
 }
 
 footer {
-  padding: 12px;
+  flex-shrink: 0;
+  padding: 10px;
   font-size: 12px;
   background: #211D25;
   color: #FFFFFF;

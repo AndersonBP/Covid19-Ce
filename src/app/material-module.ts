@@ -1,6 +1,14 @@
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule, MatDividerModule, MatListModule, MatChipsModule, MatExpansionModule } from '@angular/material';
-import {NgModule} from '@angular/core';
+import {
+  MatCardModule,
+  MatDividerModule,
+  MatListModule,
+  MatChipsModule,
+  MatExpansionModule,
+  MatButtonModule,
+  MatIconModule
+} from '@angular/material';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   exports: [
@@ -9,7 +17,9 @@ import {NgModule} from '@angular/core';
     MatDividerModule,
     MatListModule,
     MatChipsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class MaterialModule {}

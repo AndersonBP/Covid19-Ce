@@ -1,21 +1,26 @@
-
 <div class="dashboard">
   <mat-card>
-    <mat-card-title>Casos</mat-card-title>
     <mat-card-content class="panel-data confirmed">
-      {{boletim.infectados}}
+      <div class="number">
+        {{boletim.infectados}}
+      </div>
+      <p>Casos</p>
     </mat-card-content>
   </mat-card>
   <mat-card>
-    <mat-card-title>Mortes</mat-card-title>
     <mat-card-content class="panel-data deaths">
-      {{boletim.obitos}}
+      <div class="number">
+        {{boletim.obitos}}
+      </div>
+      <p>Mortes</p>
     </mat-card-content>
   </mat-card>
   <mat-card>
-    <mat-card-title>Recuperações</mat-card-title>
     <mat-card-content class="panel-data recovered">
-      {{boletim.recuperados}}
+      <div class="number">
+        {{boletim.recuperados}}
+      </div>
+      <p>Recuperações</p>
     </mat-card-content>
   </mat-card>
 </div>

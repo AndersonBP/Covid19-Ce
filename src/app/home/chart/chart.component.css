@@ -1,10 +1,3 @@
-mat-card {
-  display: flex;
-  flex: 1;
-  margin-top: .5em;
-  margin-left: .5em;
-}
-
 .chart {
-  flex: 1;
+  margin: 16px;
 }
