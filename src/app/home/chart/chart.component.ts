@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { GoogleChartInterface } from "ng2-google-charts/google-charts-interfaces";
+import { debounceTime } from "rxjs/operators";
 
 @Component({
   selector: "home-chart",
@@ -7,9 +8,14 @@ import { GoogleChartInterface } from "ng2-google-charts/google-charts-interfaces
   styleUrls: ["./chart.component.css"]
 })
 export class ChartComponent implements OnInit {
+  @Input() CidadeChatColumnData: {
+    Cidade: string;
+    Infectados: number;
+    Obitos: number;
+  }[] = [];
+
   constructor() {
-    window.onresize = (e) =>
-    {
+    window.onresize = e => {
       this.load();
     };
   }
@@ -17,29 +23,25 @@ export class ChartComponent implements OnInit {
   public lineChart: GoogleChartInterface;
 
   ngOnInit() {
-    this.load();
+    setTimeout(() => {
+      this.load();
+    }, 3000);
   }
 
   load() {
     this.ColumnChart = {
       chartType: "ColumnChart",
-      dataTable: [
-        ["Country", "Infectados", "Óbitos"],
-        ["Fortaleza", 116, 0],
-        ["Aquiraz", 5, 0],
-        ["Sobral", 1, 0],
-        ["Fortim", 1, 0],
-        ["Juazeiro do Norte", 1, 0]
-      ],
+      dataTable: [["Country", "Infectados", "Óbitos"]].concat<any[]>(
+        this.CidadeChatColumnData.map(el => [
+          el.Cidade.trim(),
+          el.Infectados,
+          el.Obitos
+        ])
+      ),
       options: {
-        legend: { position: 'top', alignment: 'center' },
+        legend: { position: "top", alignment: "center" },
         backgroundColor: "white",
-        title: "Cidades",
-        // animation: {
-        //   duration: 1000,
-        //   // easing: "out",
-        //   startup: true
-        // }
+        title: "Cidades"
       }
     };
     this.lineChart = {
@@ -55,7 +57,7 @@ export class ChartComponent implements OnInit {
         ["22/03", 124, 0]
       ],
       options: {
-        legend: { position: 'top', alignment: 'center' },
+        legend: { position: "top", alignment: "center" },
         backgroundColor: "white",
         title: "Contaminação"
       }

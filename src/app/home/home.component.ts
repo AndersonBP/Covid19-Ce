@@ -1,3 +1,4 @@
+import { TotalModel } from "./../core/services/api/models/total.model";
 import { BoletimService } from "./../core/services/api/boletim.service";
 import { AfterViewInit, Component, OnInit } from "@angular/core";
 import { BoletimModel } from "../core/services/api/models/boletim.model";
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ultimoBoletim = new BoletimModel();
   bairroAfetados = [];
+  totalCidades = [];
 
   ngAfterViewInit(): void {}
 
@@ -25,6 +27,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
     this.bairrosService.getAfetados().subscribe(res => {
       this.bairroAfetados = res.Data;
+    });
+    this.boletimService.getTotalCidades().subscribe(res => {
+      this.totalCidades = res.Data.map(el => el.Resumido);
     });
   }
 }
