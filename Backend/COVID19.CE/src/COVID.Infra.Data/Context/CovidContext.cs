@@ -13,6 +13,7 @@ namespace COVID.Infra.Data.Context
   {
     public DbSet<Caso> Casos { get; set; }
     public DbSet<Domain.Entities.Views.Totais.Total> Totais { get; set; }
+    public DbSet<Domain.Entities.Views.Totais.Total> TotalCidade { get; set; }
     public DbSet<TotalGeralUf> TotalGeralUf { get; set; }
     public DbSet<BairrosAfetados> BairrosAfetados { get; set; }
 
@@ -22,6 +23,7 @@ namespace COVID.Infra.Data.Context
       modelBuilder.AddConfiguration(new TotalMapping());
       modelBuilder.AddConfiguration(new BairrosAfetadosMapping());
       modelBuilder.AddConfiguration(new TotalGeralUfMapping());
+      modelBuilder.AddConfiguration(new TotalCidadeMapping());
 
       base.OnModelCreating(modelBuilder);
     }
