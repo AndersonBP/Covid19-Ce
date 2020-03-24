@@ -14,6 +14,7 @@ home-chart {
   background-color: #ffffff;
   width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: center;
 }
 
@@ -45,20 +46,8 @@ home-chart {
   left: 40px;
 }
 
-@keyframes fade-in {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(1);
-  }
-}
-
-@keyframes fade-out {
-  from {
-    transform: scaleY(1);
-  }
-  to {
-    transform: scaleY(0);
+@media screen and (max-width: 768px) {
+  home-chart {
+    flex-direction: column;
   }
 }

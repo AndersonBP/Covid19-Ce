@@ -1,11 +1,13 @@
-mat-card {
-  padding: 0px;
-  margin-left: .5em;
-}
-
 .map {
   width: 100%;
   height: 100%;
+}
+
+.widget {
+  position: absolute;
+  z-index: 9999;
+  top: 7%;
+  left: 10%;
 }
 
 

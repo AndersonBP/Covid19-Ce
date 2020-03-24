@@ -1,12 +1,6 @@
 .dashboard {
-  position: absolute;
-  z-index: 9999;
-  top: 7%;
-  left: 10%;
-
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column; */
 }
 
 .dashboard > mat-card {
