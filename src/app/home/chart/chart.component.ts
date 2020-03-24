@@ -31,8 +31,8 @@ export class ChartComponent implements OnInit {
   load() {
     this.ColumnChart = {
       chartType: "ColumnChart",
-      dataTable: [["Country", "Infectados", "Óbitos"]].concat<any[]>(
-        this.CidadeChatColumnData.map(el => [
+      dataTable: [["Country", "Infectados", "Óbitos"]].concat(
+        this.CidadeChatColumnData.map((el: any) => [
           el.Cidade.trim(),
           el.Infectados,
           el.Obitos
