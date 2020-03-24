@@ -10,13 +10,55 @@ mat-card > div {
   flex: 1;
 }
 
-.home {
-  /* display: flex;
-  flex-direction: column; */
+home-chart {
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-
-/* .panel {} */
 
 .map {
   height: 100%;
+  position: relative;
+}
+
+.charts.collapsed {
+  display: none;
+}
+
+.wrapper {
+  position: absolute;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+}
+
+.toggle-section {
+  background-color: #ffffff;
+  height: 28px;
+  position: relative;
+}
+
+.toggle-section button {
+  position: absolute;
+  top: -16px;
+  left: 40px;
+}
+
+@keyframes fade-in {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
 }

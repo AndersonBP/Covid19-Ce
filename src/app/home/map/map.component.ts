@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 import { AfterViewInit, Component, Input } from "@angular/core";
-
-=======
 import { TotalModel } from "./../../core/services/api/models/total.model";
-import { BairroAfetadoModel } from "./../../core/services/api/models/bairroAfetado.model";
 import { defaults as defaultControls } from "ol/control";
->>>>>>> develop
 import Map from "ol/Map";
 import View from "ol/View";
 import TileLayer from "ol/layer/Tile";
@@ -69,6 +64,7 @@ export class MapComponent implements AfterViewInit {
         minZoom: 6
       })
     });
+
     setTimeout(() => {
       this.casosCidades.forEach(el => {
         this._createCircle(el);

@@ -14,6 +14,8 @@ export class ChartComponent implements OnInit {
     Obitos: number;
   }[] = [];
 
+  toggled = true;
+
   constructor() {
     window.onresize = e => {
       this.load();
@@ -31,8 +33,8 @@ export class ChartComponent implements OnInit {
   load() {
     this.ColumnChart = {
       chartType: "ColumnChart",
-      dataTable: [["Country", "Infectados", "Óbitos"]].concat<any[]>(
-        this.CidadeChatColumnData.map(el => [
+      dataTable: [["Country", "Infectados", "Óbitos"]].concat(
+        this.CidadeChatColumnData.map((el): any => [
           el.Cidade.trim(),
           el.Infectados,
           el.Obitos
@@ -62,5 +64,9 @@ export class ChartComponent implements OnInit {
         title: "Contaminação"
       }
     };
+  }
+
+  toggleDiv() {
+    this.toggled = !this.toggled;
   }
 }

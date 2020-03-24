@@ -1,3 +1,13 @@
+<div class="map">
+  <home-map [bairrosAfetados]="bairroAfetados" [boletim]="ultimoBoletim" [casosCidades]="totalCidades"></home-map>
+  <div class="wrapper">
+    <div class="toggle-section">
+      <button mat-flat-button (click)="collapseCharts()"><mat-icon aria-hidden="false" aria-label="chart icon">donut_large</mat-icon> Graficos</button>
+    </div>
+    <home-chart [className]="toggled ? 'charts collapsed' : 'charts'" [CidadeChatColumnData]="totalCidades"></home-chart>
+  </div>
+</div>
+
 <!-- <mat-grid-list rowHeight="220px" cols="4">
   <mat-grid-tile rowspan="2" class="panel ">
     <home-panel [boletim]="ultimoBoletim"></home-panel>
@@ -10,22 +20,19 @@
   </mat-grid-tile>
 </mat-grid-list> -->
 
-<div class="map">
-  <home-map [bairrosAfetados]="bairroAfetados" [boletim]="ultimoBoletim"></home-map>
-  <!-- <home-chart></home-chart> -->
-</div>
-<div class="panel">
-  <!-- <home-dashboard [boletim]="ultimoBoletim"></home-dashboard> -->
-  <!-- <home-panel [boletim]="ultimoBoletim"></home-panel> -->
-  <!-- <home-diagnotic></home-diagnotic> -->
-</div>
+<!-- <div class="panel">
+  <home-dashboard [boletim]="ultimoBoletim"></home-dashboard>
+  <home-panel [boletim]="ultimoBoletim"></home-panel>
+  <home-diagnotic></home-diagnotic>
+</div> -->
 <!-- <mat-card>
 </mat-card> -->
-<mat-card>
+
+<!-- <mat-card>
   <div>
     <div class="panel">
       <home-dashboard [boletim]="ultimoBoletim"></home-dashboard>
-      <!-- <home-panel [boletim]="ultimoBoletim"></home-panel> -->
+      <home-panel [boletim]="ultimoBoletim"></home-panel>
       <home-diagnotic></home-diagnotic>
     </div>
     <div class="map">
@@ -33,4 +40,4 @@
       <home-chart [CidadeChatColumnData]="totalCidades"></home-chart>
     </div>
   </div>
-</mat-card>
+</mat-card> -->

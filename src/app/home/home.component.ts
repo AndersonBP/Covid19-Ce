@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ultimoBoletim = new BoletimModel();
   bairroAfetados = [];
   totalCidades = [];
+  toggled = true;
 
   ngAfterViewInit(): void {}
 
@@ -32,4 +33,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.totalCidades = res.Data.map(el => el.Resumido);
     });
   }
+
+  collapseCharts() {
+    this.toggled = !this.toggled;
+  }
+
+
 }
