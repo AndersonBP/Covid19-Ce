@@ -30,17 +30,6 @@ export class MapComponent implements AfterViewInit {
   map: Map;
   vectorSource: any;
   vectorLayer: any;
-  // casos: { Nome: string; Coordenadas: number[]; Total: number }[] = [
-  //   { Nome: "Fortaleza", Total: 116, Coordenadas: [-38.532846, -3.776984] },
-  //   { Nome: "Aquiraz", Total: 5, Coordenadas: [-38.392024, -3.91484] },
-  //   { Nome: "Fortim", Total: 1, Coordenadas: [-38.0072816, -4.4628603] },
-  //   {
-  //     Nome: "Juazeiro do Norte",
-  //     Total: 1,
-  //     Coordenadas: [-39.321005, -7.231749]
-  //   },
-  //   { Nome: "Sobral", Total: 1, Coordenadas: [-40.8384533, -3.8579345] }
-  // ];
 
   ngAfterViewInit() {
     this.vectorSource = new VectorSource();
@@ -72,8 +61,7 @@ export class MapComponent implements AfterViewInit {
       this.bairrosAfetados
         .map(el => el.coordenadas.map(y => [y.longitude, y.latitude]))
         .forEach(el => this._createPolygon(el, "2", "rgba(255,100,50,0.5)"));
-      // this._createPolygon(this.aldeota, "2", "rgba(255,100,50,0.5)");
-    }, 3000);
+    },  3000);
   }
 
   private _createCircle(pt: any) {
