@@ -11,6 +11,7 @@ namespace COVID.Application.AutoMapper
     {
       CreateMap<Caso, CasoViewModel>().ReverseMap();
       CreateMap<TotalGeralUf, TotalGeralUfViewModel>().ReverseMap();
+      CreateMap<Domain.Entities.Views.Totais.Total, TotalViewModel>().ReverseMap();
       CreateMap<Domain.Entities.Views.Totais.Total, RegiaoViewModel>().ReverseMap();
     }
   }

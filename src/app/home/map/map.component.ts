@@ -1,3 +1,4 @@
+import { TotalModel } from "./../../core/services/api/models/total.model";
 import { BairroAfetadoModel } from "./../../core/services/api/models/bairroAfetado.model";
 import { defaults as defaultControls } from "ol/control";
 import Map from "ol/Map";
@@ -30,21 +31,21 @@ import LineString from "ol/geom/LineString";
 })
 export class MapComponent implements AfterViewInit {
   @Input() bairrosAfetados: BairroAfetadoModel[] = [];
-
+  @Input() casosCidades: any[];
   map: Map;
   vectorSource: any;
   vectorLayer: any;
-  casos: { Nome: string; Coordenadas: number[]; Total: number }[] = [
-    { Nome: "Fortaleza", Total: 116, Coordenadas: [-38.532846, -3.776984] },
-    { Nome: "Aquiraz", Total: 5, Coordenadas: [-38.392024, -3.91484] },
-    { Nome: "Fortim", Total: 1, Coordenadas: [-38.0072816, -4.4628603] },
-    {
-      Nome: "Juazeiro do Norte",
-      Total: 1,
-      Coordenadas: [-39.321005, -7.231749]
-    },
-    { Nome: "Sobral", Total: 1, Coordenadas: [-40.8384533, -3.8579345] }
-  ];
+  // casos: { Nome: string; Coordenadas: number[]; Total: number }[] = [
+  //   { Nome: "Fortaleza", Total: 116, Coordenadas: [-38.532846, -3.776984] },
+  //   { Nome: "Aquiraz", Total: 5, Coordenadas: [-38.392024, -3.91484] },
+  //   { Nome: "Fortim", Total: 1, Coordenadas: [-38.0072816, -4.4628603] },
+  //   {
+  //     Nome: "Juazeiro do Norte",
+  //     Total: 1,
+  //     Coordenadas: [-39.321005, -7.231749]
+  //   },
+  //   { Nome: "Sobral", Total: 1, Coordenadas: [-40.8384533, -3.8579345] }
+  // ];
 
   ngAfterViewInit() {
     this.vectorSource = new VectorSource();
@@ -69,7 +70,7 @@ export class MapComponent implements AfterViewInit {
       })
     });
     setTimeout(() => {
-      this.casos.forEach(el => {
+      this.casosCidades.forEach(el => {
         this._createCircle(el);
       });
       this.bairrosAfetados
@@ -92,7 +93,7 @@ export class MapComponent implements AfterViewInit {
         font: "Normal 15px Arial",
         textAlign: "center",
         textBaseline: "middle",
-        text: `${pt.Nome} - ${pt.Total.toString()}`,
+        text: `${pt.Cidade} - ${pt.Infectados.toString()} casos`,
         fill: new Fill({
           color: "#ffa500"
         }),

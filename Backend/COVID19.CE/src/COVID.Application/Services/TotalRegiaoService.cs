@@ -42,6 +42,12 @@ namespace COVID.Application.Services
       return totais;
     }
 
+    public List<TotalViewModel> TotalCidade(string uf)
+    {
+      var resultados = _totalRegiaoRepository.TotalCidade(uf);
+      return _mapper.Map<List<TotalViewModel>>(resultados);
+    }
+
     public void Dispose()
     {
       _totalRegiaoRepository.Dispose();

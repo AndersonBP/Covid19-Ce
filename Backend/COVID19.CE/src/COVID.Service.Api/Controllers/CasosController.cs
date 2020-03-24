@@ -63,10 +63,10 @@ namespace COVID.Service.Api.Controllers
       return _totalRegiaoService.Total();
     }
 
-    [HttpGet("totalcidadeporuf/{uf}")]
-    public IEnumerable<TotalRegiaoViewModel> TotalCidadePorUf(string uf)
+    [HttpGet("totalcidadesuf/{uf}")]
+    public IEnumerable<TotalViewModel> TotalCidadePorUf(string uf)
     {
-      return _totalRegiaoService.Total();
+      return _totalRegiaoService.TotalCidade(uf);
     }
 
     [HttpGet("bairrosafetados/{cidade}")]

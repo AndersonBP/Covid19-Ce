@@ -18,8 +18,8 @@
       <home-diagnotic></home-diagnotic>
     </div>
     <div class="map">
-      <home-map [bairrosAfetados]="bairroAfetados"></home-map>
-      <home-chart></home-chart>
+      <home-map [bairrosAfetados]="bairroAfetados" [casosCidades]="totalCidades"></home-map>
+      <home-chart [CidadeChatColumnData]="totalCidades"></home-chart>
     </div>
   </div>
 </mat-card>
