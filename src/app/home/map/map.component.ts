@@ -17,16 +17,18 @@ import Polygon from "ol/geom/Polygon";
 import LineString from "ol/geom/LineString";
 
 import { BairroAfetadoModel } from "./../../core/services/api/models/bairroAfetado.model";
-import { BoletimModel } from 'src/app/core/services/api/models/boletim.model';
+import { BoletimModel } from "src/app/core/services/api/models/boletim.model";
+import { trigger, transition, style, animate } from "@angular/animations";
 @Component({
   selector: "home-map",
   templateUrl: "./map.component.html",
-  styleUrls: ["./map.component.css"]
+  styleUrls: ["./map.component.css"],
 })
 export class MapComponent implements AfterViewInit {
   @Input() bairrosAfetados: BairroAfetadoModel[] = [];
   @Input() boletim = new BoletimModel();
   @Input() casosCidades: any[];
+  @Input() dashOpen = false;
   map: Map;
   vectorSource: any;
   vectorLayer: any;
@@ -61,7 +63,7 @@ export class MapComponent implements AfterViewInit {
       this.bairrosAfetados
         .map(el => el.coordenadas.map(y => [y.longitude, y.latitude]))
         .forEach(el => this._createPolygon(el, "2", "rgba(255,100,50,0.5)"));
-    },  3000);
+    }, 3000);
   }
 
   private _createCircle(pt: any) {

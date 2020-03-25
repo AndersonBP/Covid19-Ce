@@ -1,7 +1,7 @@
 mat-card {
-  padding: .5em;
+  padding: 0.5em;
   border-radius: 0px;
-  background-color: #F8F7FA;
+  background-color: #f8f7fa;
 }
 
 mat-card > div {
@@ -49,5 +49,7 @@ home-chart {
 @media screen and (max-width: 768px) {
   home-chart {
     flex-direction: column;
+    max-height: 275px;
+    overflow-x: hidden;
   }
 }

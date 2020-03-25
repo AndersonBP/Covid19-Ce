@@ -1,5 +1,5 @@
 <div class="widget">
   <!-- <header><h1>HEADER</h1></header> -->
-  <home-dashboard [boletim]="boletim"></home-dashboard>
+  <home-dashboard *ngIf="dashOpen" [boletim]="boletim"></home-dashboard>
 </div>
 <div id="map" tabindex="1" class="map"></div>

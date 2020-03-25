@@ -52,5 +52,11 @@ namespace COVID.Application.Services
     {
       _totalRegiaoRepository.Dispose();
     }
+
+    public List<TotalViewModel> TotalDiaUF(string uf)
+    {
+      var resultados = _totalRegiaoRepository.TotalDiaUF(uf);
+      return _mapper.Map<List<TotalViewModel>>(resultados);
+    }
   }
 }

@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ultimoBoletim = new BoletimModel();
   bairroAfetados = [];
   totalCidades = [];
+  totalDiasUF = [];
   toggled = true;
 
   ngAfterViewInit(): void {}
@@ -31,6 +32,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
     this.boletimService.getTotalCidades().subscribe(res => {
       this.totalCidades = res.Data.map(el => el.Resumido);
+    });
+    this.boletimService.getTotalDiaUF().subscribe(res => {
+          console.log(res)
+          this.totalDiasUF = res.Data.map(el => el.Totais).reverse();
     });
   }
 

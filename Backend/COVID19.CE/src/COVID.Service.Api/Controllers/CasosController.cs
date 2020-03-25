@@ -51,10 +51,10 @@ namespace COVID.Service.Api.Controllers
       return _totalGeralUfService.ObterPorUf(uf);
     }
 
-    [HttpGet("somapordia/{uf}")]
-    public IEnumerable<TotalRegiaoViewModel> SomaPorDia(string uf)
+    [HttpGet("TotalDiaUF/{uf}")]
+    public IEnumerable<TotalViewModel> SomaPorDia(string uf)
     {
-      return _totalRegiaoService.Total();
+      return _totalRegiaoService.TotalDiaUF(uf);
     }
 
     [HttpGet("totalcidade/{cidade}")]
