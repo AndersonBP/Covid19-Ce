@@ -6,7 +6,7 @@
 .dashboard > mat-card {
   padding: 12px;
   width: 88px;
-  margin: 10px;
+  margin: 10px 10px 0px 0px;
   text-align: center;
 }
 

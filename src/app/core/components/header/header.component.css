@@ -1,37 +1,58 @@
-/* .navbar-brand {
-  width: 100%;
-  background-color: black;
-  margin-top: -7px;
-  margin-bottom: 5px;
-}
-
-h3 {
-  color: white;
-  text-align: center;
-  padding: 20px;
-} */
-
-@media only screen and (max-width: 800px) {
-  /* For tablets: */
-  /* .navbar-brand {
-    height: 77px;
-  }
-  h3 {
-    font-size: x-large;
-  } */
-}
-@media only screen and (max-width: 500px) {
-  /* For mobile phones: */
-  /* .navbar-brand {
-    height: 50px;
-  }
-  h3 {
-    font-size: medium;
-  } */
-}
-
 .app-bar {
-  background-color: #211D25 !important;
-  color: #FFFFFF !important;
-  justify-content: center;
+  display: flex;
+  flex: 1;
+  background-color: #FFFFFF !important;
+  color: #211D25;
+  border-radius: 4px;
+  padding: .8em 1em;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
+
+.app-bar > span {
+  font-size: large;
+  font-weight: 500;
+}
+
+div {
+  display: flex;
+}
+
+div > div {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+div > div+div {
+  margin-left: 1em;
+}
+
+div > div > i {
+  color: red;
+  margin-right: 3px;
+}
+
+div > div > span {
+  border-bottom:1px dotted #211D25;
+}
+
+@media only screen and (max-width: 600px) {
+  .app-bar {
+    flex-direction: column;
+  }
+
+  div {
+    margin-top: .5em;
+  }
+}
+
+@media only screen and (max-width: 345px) {
+  .app-bar > span {
+    font-size: medium;
+    font-weight: 500;
+    text-align: center;
+  }
+}
+
