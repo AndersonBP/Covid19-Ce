@@ -4,6 +4,9 @@
 }
 
 .widget {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
   position: absolute;
   z-index: 9999;
   top: 7%;
