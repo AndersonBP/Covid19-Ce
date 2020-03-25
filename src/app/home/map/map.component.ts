@@ -29,6 +29,7 @@ export class MapComponent implements AfterViewInit {
   @Input() boletim = new BoletimModel();
   @Input() casosCidades: any[];
   @Input() dashOpen = false;
+  @Input() ultimaAtualizacao = "";
   map: Map;
   vectorSource: any;
   vectorLayer: any;
