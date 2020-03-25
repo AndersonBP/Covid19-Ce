@@ -1,10 +1,10 @@
 .app-bar {
   display: flex;
   flex: 1;
-  background-color: #FFFFFF !important;
-  color: #211D25;
+  background-color: #ffffff !important;
+  color: #211d25;
   border-radius: 4px;
-  padding: .8em 1em;
+  padding: 0.8em 1em;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -25,7 +25,7 @@ div > div {
   font-weight: 500;
 }
 
-div > div+div {
+div > div + div {
   margin-left: 1em;
 }
 
@@ -35,7 +35,7 @@ div > div > i {
 }
 
 div > div > span {
-  border-bottom:1px dotted #211D25;
+  border-bottom: 1px dotted #211d25;
 }
 
 @media only screen and (max-width: 600px) {
@@ -44,15 +44,17 @@ div > div > span {
   }
 
   div {
-    margin-top: .5em;
+    margin-top: 0.5em;
   }
 }
 
-@media only screen and (max-width: 345px) {
+@media only screen and (max-width: 500px) {
+  .app-bar {
+    width: 245px;
+  }
   .app-bar > span {
     font-size: medium;
     font-weight: 500;
     text-align: center;
   }
 }
-
