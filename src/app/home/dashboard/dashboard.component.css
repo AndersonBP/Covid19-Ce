@@ -30,3 +30,22 @@
 .confirmed {
   color: red;
 }
+
+@media only screen and (max-width: 800px) {
+  /* For tablets: */
+  p {
+    font-size: medium;
+  }
+  .dashboard > mat-card {
+    width: 88px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .dashboard > mat-card {
+    width: 60px;
+  }
+
+  p {
+    font-size: smaller;
+  }
+}

@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 html,
 body {
   height: 100%;
-  background: #F8F7FA;
+  background: #f8f7fa;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
@@ -33,6 +33,5 @@ body {
   } */
   /* Cards */
 }
-
 
 /* #211D25, #4D4852, #FCEAFF, #00C9AA */

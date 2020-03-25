@@ -44,12 +44,30 @@ export class TotalModel extends Model implements IModel {
     Infectados: number;
     Obitos: number;
     Coordenadas: number[];
+    Data: string;
   } {
     return {
       Cidade: this.nomecidade.trim(),
       Infectados: this.infectados,
       Obitos: this.obitos,
-      Coordenadas: [this.longitude, this.latitude]
+      Coordenadas: [this.longitude, this.latitude],
+      Data: `${new Date(this.data).getMonth()}/${new Date(this.data).getDay()}`
+    };
+  }
+
+  get Totais(): {
+    Cidade: string;
+    Infectados: number;
+    Obitos: number;
+    Coordenadas: number[];
+    Data: string;
+  } {
+    return {
+      Cidade: this.nomecidade.trim(),
+      Infectados: this.totalinfectados,
+      Obitos: this.totalobitos,
+      Coordenadas: [this.longitude, this.latitude],
+      Data: `${new Date(this.data).getMonth()+1}/${new Date(this.data).getDate()}`
     };
   }
 

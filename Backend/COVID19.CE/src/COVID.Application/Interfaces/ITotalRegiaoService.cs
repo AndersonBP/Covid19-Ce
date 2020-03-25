@@ -8,5 +8,6 @@ namespace COVID.Application.Interfaces
   {
     List<TotalRegiaoViewModel> Total();
     List<TotalViewModel> TotalCidade(string uf);
+    List<TotalViewModel> TotalDiaUF(string uf);
   }
 }
