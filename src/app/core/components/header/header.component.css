@@ -51,6 +51,7 @@ div > div > span {
 @media only screen and (max-width: 500px) {
   .app-bar {
     width: 245px;
+    flex-direction: row;
   }
   .app-bar > span {
     font-size: medium;

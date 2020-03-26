@@ -1,13 +1,13 @@
-<div class="map">
-  <home-map [bairrosAfetados]="bairroAfetados" [boletim]="ultimoBoletim" [casosCidades]="totalCidades"
-    [dashOpen]="toggled" [ultimaAtualizacao]="ultimaAtualizacao"></home-map>
+<div class="container">
+  <home-map [boletim]="ultimoBoletim" [dashOpen]="toggled" [ultimaAtualizacao]="ultimaAtualizacao"></home-map>
   <div class="wrapper">
     <div class="toggle-section">
       <button mat-flat-button (click)="collapseCharts()">
         <mat-icon aria-hidden="false" aria-label="chart icon">donut_large</mat-icon> Graficos
       </button>
     </div>
-    <home-chart [className]="toggled ? 'charts collapsed' : 'charts'" [CidadeChatColumnData]="totalCidades" [TotalDiasUf]="totalDiasUF">
+    <home-chart [className]="toggled ? 'charts collapsed' : 'charts'" [CidadeChatColumnData]="totalCidades"
+      [TotalDiasUf]="totalDiasUF">
     </home-chart>
   </div>
 </div>

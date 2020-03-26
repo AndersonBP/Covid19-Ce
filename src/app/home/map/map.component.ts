@@ -19,10 +19,13 @@ import LineString from "ol/geom/LineString";
 import { BairroAfetadoModel } from "./../../core/services/api/models/bairroAfetado.model";
 import { BoletimModel } from "src/app/core/services/api/models/boletim.model";
 import { trigger, transition, style, animate } from "@angular/animations";
+import TileImage from "ol/source/TileImage";
+import { BoletimService } from "src/app/core/services/api/boletim.service";
+import { BairrosService } from "src/app/core/services/api/bairros.service";
 @Component({
   selector: "home-map",
   templateUrl: "./map.component.html",
-  styleUrls: ["./map.component.css"],
+  styleUrls: ["./map.component.css"]
 })
 export class MapComponent implements AfterViewInit {
   @Input() bairrosAfetados: BairroAfetadoModel[] = [];
@@ -33,6 +36,11 @@ export class MapComponent implements AfterViewInit {
   map: Map;
   vectorSource: any;
   vectorLayer: any;
+
+  constructor(
+    private boletimService: BoletimService,
+    private bairrosService: BairrosService
+  ) {}
 
   ngAfterViewInit() {
     this.vectorSource = new VectorSource();
@@ -46,25 +54,38 @@ export class MapComponent implements AfterViewInit {
       target: "map",
       layers: [
         new TileLayer({
-          source: new OSM()
+          visible: true,
+          source: new TileImage({
+            // tslint:disable-next-line:max-line-length
+            url:
+              "https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ZvcnRkZXZlbG9wZXIiLCJhIjoiY2poZHgwNGhwMGo5MDMwbzdjMTc3eDRiaiJ9.P6jtKCrEbI5MqimmQI-oJg"
+          })
         }),
+        // new TileLayer({
+        //   source: new OSM()
+        // }),
         this.vectorLayer
       ],
       view: new View({
         center: olProj.fromLonLat([-38.563203, -3.834106]),
         zoom: 10,
-        minZoom: 6
+        minZoom: 7
       })
     });
+    this.map.updateSize();
 
-    setTimeout(() => {
-      this.casosCidades.forEach(el => {
-        this._createCircle(el);
-      });
+    this.bairrosService.getAfetados().subscribe(res => {
+      this.bairrosAfetados = res.Data;
       this.bairrosAfetados
         .map(el => el.coordenadas.map(y => [y.longitude, y.latitude]))
         .forEach(el => this._createPolygon(el, "2", "rgba(255,100,50,0.5)"));
-    }, 3000);
+    });
+    this.boletimService.getTotalCidades().subscribe(res => {
+      this.casosCidades = res.Data.map(el => el.Resumido);
+      this.casosCidades.forEach(el => {
+        this._createCircle(el);
+      });
+    });
   }
 
   private _createCircle(pt: any) {
