@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.totalCidades = res.Data.map(el => el.Resumido);
     });
     this.boletimService.getTotalDiaUF().subscribe(res => {
-      this.totalDiasUF = res.Data.map(el => el.Totais).reverse();
+      this.totalDiasUF = res.Data.map((el) => el.Totais).reverse();
     });
     this.boletimService.getTotais().subscribe(res => {
       this.ultimaAtualizacao = this.datepipe.transform(new Date(res.Data[0].data), 'yy MMM');

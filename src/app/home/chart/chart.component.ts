@@ -61,10 +61,13 @@ export class ChartComponent implements OnInit {
       //   ["21/03", 82, 0],
       //   ["22/03", 124, 0]
       // ],
-      dataTable: [["Dia", "Infectados", "Óbitos"]].concat(
-        this.TotalDiasUf.map((el: any) => [
+      dataTable: [
+        ["Dia", "Infectados", "Taxa de crescimento", "Óbitos"]
+      ].concat(
+        this.TotalDiasUf.map((el: any, idx, col) => [
           el.Data,
           el.Infectados,
+          idx == 0 ? 0 :  el.Infectados-col[idx - 1].Infectados,
           el.Obitos
         ])
       ),
