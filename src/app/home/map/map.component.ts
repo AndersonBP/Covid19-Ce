@@ -72,7 +72,6 @@ export class MapComponent implements AfterViewInit {
         minZoom: 7
       })
     });
-    this.map.updateSize();
 
     this.bairrosService.getAfetados().subscribe(res => {
       this.bairrosAfetados = res.Data;
@@ -123,6 +122,10 @@ export class MapComponent implements AfterViewInit {
     circleSource.addFeature(
       new Feature(new Circle(olProj.fromLonLat(pt.Coordenadas), 2000))
     );
+
+    setTimeout(() => {
+    this.map.updateSize();
+    }, 300);
   }
 
   private _createPolygon(coords: any[], type: any, color: any) {

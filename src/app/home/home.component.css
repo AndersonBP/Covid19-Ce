@@ -18,7 +18,7 @@ home-chart {
   justify-content: center;
 }
 
-.map {
+.container-map {
   height: 100%;
   position: relative;
 }
@@ -28,7 +28,7 @@ home-chart {
 }
 
 .wrapper {
-  position: absolute;
+  position: relative;
   bottom: 0;
   z-index: 999;
   width: 100%;
