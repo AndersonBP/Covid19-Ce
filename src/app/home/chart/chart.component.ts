@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { GoogleChartInterface } from "ng2-google-charts/google-charts-interfaces";
+import { debounceTime } from "rxjs/operators";
 
 @Component({
   selector: "home-chart",
@@ -7,9 +8,18 @@ import { GoogleChartInterface } from "ng2-google-charts/google-charts-interfaces
   styleUrls: ["./chart.component.css"]
 })
 export class ChartComponent implements OnInit {
+  @Input() CidadeChatColumnData: {
+    Cidade: string;
+    Infectados: number;
+    Obitos: number;
+  }[] = [];
+
+  @Input() TotalDiasUf: any[];
+
+  toggled = true;
+
   constructor() {
-    window.onresize = (e) =>
-    {
+    window.onresize = e => {
       this.load();
     };
   }
@@ -17,48 +27,59 @@ export class ChartComponent implements OnInit {
   public lineChart: GoogleChartInterface;
 
   ngOnInit() {
-    this.load();
+    setTimeout(() => {
+      this.load();
+    }, 3000);
   }
 
   load() {
     this.ColumnChart = {
       chartType: "ColumnChart",
-      dataTable: [
-        ["Country", "Infectados", "Óbitos"],
-        ["Fortaleza", 116, 0],
-        ["Aquiraz", 5, 0],
-        ["Sobral", 1, 0],
-        ["Fortim", 1, 0],
-        ["Juazeiro do Norte", 1, 0]
-      ],
+      dataTable: [["Country", "Infectados", "Óbitos"]].concat(
+        this.CidadeChatColumnData.map((el: any) => [
+          el.Cidade.trim(),
+          el.Infectados,
+          el.Obitos
+        ])
+      ),
       options: {
-        legend: { position: 'top', alignment: 'center' },
+        legend: { position: "top", alignment: "center" },
         backgroundColor: "white",
         title: "Cidades",
-        // animation: {
-        //   duration: 1000,
-        //   // easing: "out",
-        //   startup: true
-        // }
+        bar: { groupWidth: "100%" }
       }
     };
     this.lineChart = {
       chartType: "LineChart",
+      // dataTable: [
+      //   ["Dia", "Infectados", "Óbitos"],
+      //   ["16/03", 2, 0],
+      //   ["17/03", 10, 0],
+      //   ["18/03", 19, 0],
+      //   ["19/03", 23, 0],
+      //   ["20/03", 66, 0],
+      //   ["21/03", 82, 0],
+      //   ["22/03", 124, 0]
+      // ],
       dataTable: [
-        ["Dia", "Infectados", "Óbitos"],
-        ["16/03", 2, 0],
-        ["17/03", 10, 0],
-        ["18/03", 19, 0],
-        ["19/03", 23, 0],
-        ["20/03", 66, 0],
-        ["21/03", 82, 0],
-        ["22/03", 124, 0]
-      ],
+        ["Dia", "Infectados", "Taxa de crescimento", "Óbitos"]
+      ].concat(
+        this.TotalDiasUf.map((el: any, idx, col) => [
+          el.Data,
+          el.Infectados,
+          idx == 0 ? 0 :  el.Infectados-col[idx - 1].Infectados,
+          el.Obitos
+        ])
+      ),
       options: {
-        legend: { position: 'top', alignment: 'center' },
+        legend: { position: "top", alignment: "center" },
         backgroundColor: "white",
         title: "Contaminação"
       }
     };
+  }
+
+  toggleDiv() {
+    this.toggled = !this.toggled;
   }
 }

@@ -51,10 +51,10 @@ namespace COVID.Service.Api.Controllers
       return _totalGeralUfService.ObterPorUf(uf);
     }
 
-    [HttpGet("somapordia/{uf}")]
-    public IEnumerable<TotalRegiaoViewModel> SomaPorDia(string uf)
+    [HttpGet("TotalDiaUF/{uf}")]
+    public IEnumerable<TotalViewModel> SomaPorDia(string uf)
     {
-      return _totalRegiaoService.Total();
+      return _totalRegiaoService.TotalDiaUF(uf);
     }
 
     [HttpGet("totalcidade/{cidade}")]
@@ -63,10 +63,10 @@ namespace COVID.Service.Api.Controllers
       return _totalRegiaoService.Total();
     }
 
-    [HttpGet("totalcidadeporuf/{uf}")]
-    public IEnumerable<TotalRegiaoViewModel> TotalCidadePorUf(string uf)
+    [HttpGet("totalcidadesuf/{uf}")]
+    public IEnumerable<TotalViewModel> TotalCidadePorUf(string uf)
     {
-      return _totalRegiaoService.Total();
+      return _totalRegiaoService.TotalCidade(uf);
     }
 
     [HttpGet("bairrosafetados/{cidade}")]

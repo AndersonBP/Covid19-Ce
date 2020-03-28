@@ -1,23 +1,55 @@
 mat-card {
-  padding: .5em;
+  padding: 0.5em;
   border-radius: 0px;
-  background-color: #F8F7FA;
+  background-color: #f8f7fa;
 }
 
 mat-card > div {
   display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+home-chart {
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
   flex-direction: row;
-  flex: 1;
+  justify-content: center;
 }
 
-.panel {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+.container-map {
+  height: 100%;
+  position: relative;
 }
 
-.map {
-  display: flex;
-  flex-direction: column;
-  flex: 3;
+.charts.collapsed {
+  display: none;
+}
+
+.wrapper {
+  position: relative;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+}
+
+.toggle-section {
+  background-color: #ffffff;
+  height: 28px;
+  position: relative;
+}
+
+.toggle-section button {
+  position: absolute;
+  top: -16px;
+  left: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  home-chart {
+    flex-direction: column;
+    max-height: 275px;
+    overflow-x: hidden;
+  }
 }

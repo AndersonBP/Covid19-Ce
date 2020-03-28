@@ -1,22 +1,14 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
   selector: "app-header",
-  template: `
-    <mat-toolbar color="primary" class="app-bar mat-elevation-z6">
-      Monitoramento Covid19 Ceará
-    </mat-toolbar>
-  `,
+  templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 
-// <nav class="navbar">
-//       <!-- logo -->
-//       <div class="navbar-brand">
-//         <h3 class="float-left">Monitoramento Covid19 Ceará</h3>
-//       </div>
-//     </nav>
 export class HeaderComponent implements OnInit {
+  @Input() ultimaAtualizacao: Date;
+
   constructor() { }
   ngOnInit() { }
 }

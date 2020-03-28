@@ -15,6 +15,7 @@ import { DiagnoticPlaceComponent } from './home/diagnotic-place/diagnotic-place.
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { BlockUIModule } from 'ng-block-ui';
 import { NgxLoadingModule } from 'ngx-loading';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { NgxLoadingModule } from 'ngx-loading';
     NgxLoadingModule.forRoot({
     }),
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
