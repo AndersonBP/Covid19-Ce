@@ -1,25 +1,7 @@
-<!-- <mat-grid-list rowHeight="220px" cols="4">
-  <mat-grid-tile rowspan="2" class="panel ">
-    <home-panel [boletim]="ultimoBoletim"></home-panel>
-  </mat-grid-tile>
-  <mat-grid-tile rowspan="2" class="" colspan="3">
-    <home-map [bairrosAfetados]="bairroAfetados"></home-map>
-  </mat-grid-tile>
-  <mat-grid-tile colspan="4">
-    <home-chart></home-chart>
-  </mat-grid-tile>
-</mat-grid-list> -->
-
-<mat-card>
-  <div>
-    <div class="panel">
-      <home-dashboard [boletim]="ultimoBoletim"></home-dashboard>
-      <!-- <home-panel [boletim]="ultimoBoletim"></home-panel> -->
-      <home-diagnotic></home-diagnotic>
-    </div>
-    <div class="map">
-      <home-map [bairrosAfetados]="bairroAfetados" [casosCidades]="totalCidades"></home-map>
-      <home-chart [CidadeChatColumnData]="totalCidades"></home-chart>
-    </div>
-  </div>
-</mat-card>
+<mat-tab-group>
+  <mat-tab label="Map">
+    <home-map [bairrosAfetados]="bairroAfetados" [casosCidades]="totalCidades"></home-map>
+  </mat-tab>
+  <mat-tab label="Locais de atendimento"> <home-diagnotic></home-diagnotic> </mat-tab>
+  <mat-tab label="Estatisticas"> <home-chart [CidadeChatColumnData]="totalCidades"></home-chart> </mat-tab>
+</mat-tab-group>
