@@ -1,21 +1,22 @@
 .dashboard {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
 }
 
 .dashboard > mat-card {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  align-items: center;
-  margin: 1px
+  padding: 12px;
+  width: 88px;
+  margin: 10px 10px 0px 0px;
+  text-align: center;
 }
 
 .panel-data {
-  font-size: 30px;
   font-weight: 500;
   padding: 10px 0px;
+}
+
+.number {
+  font-size: 30px;
 }
 
 .deaths {
@@ -28,4 +29,23 @@
 
 .confirmed {
   color: red;
+}
+
+@media only screen and (max-width: 800px) {
+  /* For tablets: */
+  p {
+    font-size: medium;
+  }
+  .dashboard > mat-card {
+    width: 88px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .dashboard > mat-card {
+    width: 60px;
+  }
+
+  p {
+    font-size: smaller;
+  }
 }

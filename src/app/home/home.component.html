@@ -2,6 +2,12 @@
   <mat-tab label="Map">
     <home-map [bairrosAfetados]="bairroAfetados" [casosCidades]="totalCidades"></home-map>
   </mat-tab>
-  <mat-tab label="Locais de atendimento"> <home-diagnotic></home-diagnotic> </mat-tab>
-  <mat-tab label="Estatisticas"> <home-chart [CidadeChatColumnData]="totalCidades"></home-chart> </mat-tab>
+  <mat-tab label="Locais de atendimento">
+    <home-diagnotic></home-diagnotic>
+  </mat-tab>
+  <mat-tab label="Estatisticas">
+    <home-chart [className]="toggled ? 'charts collapsed' : 'charts'" [CidadeChatColumnData]="totalCidades"
+    [TotalDiasUf]="totalDiasUF">
+  </home-chart>
+  </mat-tab>
 </mat-tab-group>

@@ -14,6 +14,10 @@ export class ChartComponent implements OnInit {
     Obitos: number;
   }[] = [];
 
+  @Input() TotalDiasUf: any[];
+
+  toggled = true;
+
   constructor() {
     window.onresize = e => {
       this.load();
@@ -41,26 +45,41 @@ export class ChartComponent implements OnInit {
       options: {
         legend: { position: "top", alignment: "center" },
         backgroundColor: "white",
-        title: "Cidades"
+        title: "Cidades",
+        bar: { groupWidth: "100%" }
       }
     };
     this.lineChart = {
       chartType: "LineChart",
+      // dataTable: [
+      //   ["Dia", "Infectados", "Óbitos"],
+      //   ["16/03", 2, 0],
+      //   ["17/03", 10, 0],
+      //   ["18/03", 19, 0],
+      //   ["19/03", 23, 0],
+      //   ["20/03", 66, 0],
+      //   ["21/03", 82, 0],
+      //   ["22/03", 124, 0]
+      // ],
       dataTable: [
-        ["Dia", "Infectados", "Óbitos"],
-        ["16/03", 2, 0],
-        ["17/03", 10, 0],
-        ["18/03", 19, 0],
-        ["19/03", 23, 0],
-        ["20/03", 66, 0],
-        ["21/03", 82, 0],
-        ["22/03", 124, 0]
-      ],
+        ["Dia", "Infectados", "Taxa de crescimento", "Óbitos"]
+      ].concat(
+        this.TotalDiasUf.map((el: any, idx, col) => [
+          el.Data,
+          el.Infectados,
+          idx == 0 ? 0 :  el.Infectados-col[idx - 1].Infectados,
+          el.Obitos
+        ])
+      ),
       options: {
         legend: { position: "top", alignment: "center" },
         backgroundColor: "white",
         title: "Contaminação"
       }
     };
+  }
+
+  toggleDiv() {
+    this.toggled = !this.toggled;
   }
 }

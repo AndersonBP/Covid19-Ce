@@ -35,4 +35,17 @@ export class BoletimService {
       })
     );
   }
+
+  public getTotalDiaUF(): Observable<Response<TotalModel[]>> {
+    return this.http.get("casos/totaldiauf/ce").pipe(
+      map(res => {
+        const response = new Response<TotalModel[]>();
+        response.Data = res
+          .map(el => {
+            return TotalModel.Create(el);
+          });
+        return response;
+      })
+    );
+  }
 }
