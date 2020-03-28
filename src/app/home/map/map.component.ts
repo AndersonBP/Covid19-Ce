@@ -1,29 +1,27 @@
+import { AfterViewInit, Component, Input } from "@angular/core";
 import { TotalModel } from "./../../core/services/api/models/total.model";
-import { BairroAfetadoModel } from "./../../core/services/api/models/bairroAfetado.model";
 import { defaults as defaultControls } from "ol/control";
 import Map from "ol/Map";
 import View from "ol/View";
 import TileLayer from "ol/layer/Tile";
-import XYZ from "ol/source/XYZ";
-import ZoomToExtent from "ol/control/ZoomToExtent";
 import * as olProj from "ol/proj";
 import { Feature } from "ol";
-import Point from "ol/geom/Point";
 import { Icon, Style, Stroke, Text, Fill } from "ol/style";
 import VectorSource from "ol/source/Vector";
 import VectorLayer from "ol/layer/Vector";
-import IconAnchorUnits from "ol/style/IconAnchorUnits";
-import { AfterViewInit, Component, Input } from "@angular/core";
 import OSM from "ol/source/OSM";
-import { focus } from "ol/events/condition";
 import { MouseWheelZoom, defaults, DragPan } from "ol/interaction";
 import Circle from "ol/geom/Circle";
-import CircleStyle from "ol/style/Circle";
-import TileSource from "ol/source/Tile";
-import TileImage from "ol/source/TileImage";
 import { Coordinate } from "ol/coordinate";
 import Polygon from "ol/geom/Polygon";
 import LineString from "ol/geom/LineString";
+
+import { BairroAfetadoModel } from "./../../core/services/api/models/bairroAfetado.model";
+import { BoletimModel } from "src/app/core/services/api/models/boletim.model";
+import { trigger, transition, style, animate } from "@angular/animations";
+import TileImage from "ol/source/TileImage";
+import { BoletimService } from "src/app/core/services/api/boletim.service";
+import { BairrosService } from "src/app/core/services/api/bairros.service";
 @Component({
   selector: "home-map",
   templateUrl: "./map.component.html",
@@ -31,21 +29,18 @@ import LineString from "ol/geom/LineString";
 })
 export class MapComponent implements AfterViewInit {
   @Input() bairrosAfetados: BairroAfetadoModel[] = [];
+  @Input() boletim = new BoletimModel();
   @Input() casosCidades: any[];
+  @Input() dashOpen = false;
+  @Input() ultimaAtualizacao = "";
   map: Map;
   vectorSource: any;
   vectorLayer: any;
-  // casos: { Nome: string; Coordenadas: number[]; Total: number }[] = [
-  //   { Nome: "Fortaleza", Total: 116, Coordenadas: [-38.532846, -3.776984] },
-  //   { Nome: "Aquiraz", Total: 5, Coordenadas: [-38.392024, -3.91484] },
-  //   { Nome: "Fortim", Total: 1, Coordenadas: [-38.0072816, -4.4628603] },
-  //   {
-  //     Nome: "Juazeiro do Norte",
-  //     Total: 1,
-  //     Coordenadas: [-39.321005, -7.231749]
-  //   },
-  //   { Nome: "Sobral", Total: 1, Coordenadas: [-40.8384533, -3.8579345] }
-  // ];
+
+  constructor(
+    private boletimService: BoletimService,
+    private bairrosService: BairrosService
+  ) {}
 
   ngAfterViewInit() {
     this.vectorSource = new VectorSource();
@@ -59,25 +54,37 @@ export class MapComponent implements AfterViewInit {
       target: "map",
       layers: [
         new TileLayer({
-          source: new OSM()
+          visible: true,
+          source: new TileImage({
+            // tslint:disable-next-line:max-line-length
+            url:
+              "https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ZvcnRkZXZlbG9wZXIiLCJhIjoiY2poZHgwNGhwMGo5MDMwbzdjMTc3eDRiaiJ9.P6jtKCrEbI5MqimmQI-oJg"
+          })
         }),
+        // new TileLayer({
+        //   source: new OSM()
+        // }),
         this.vectorLayer
       ],
       view: new View({
         center: olProj.fromLonLat([-38.563203, -3.834106]),
         zoom: 10,
-        minZoom: 6
+        minZoom: 7
       })
     });
-    setTimeout(() => {
-      this.casosCidades.forEach(el => {
-        this._createCircle(el);
-      });
+
+    this.bairrosService.getAfetados().subscribe(res => {
+      this.bairrosAfetados = res.Data;
       this.bairrosAfetados
         .map(el => el.coordenadas.map(y => [y.longitude, y.latitude]))
         .forEach(el => this._createPolygon(el, "2", "rgba(255,100,50,0.5)"));
-      // this._createPolygon(this.aldeota, "2", "rgba(255,100,50,0.5)");
-    }, 3000);
+    });
+    this.boletimService.getTotalCidades().subscribe(res => {
+      this.casosCidades = res.Data.map(el => el.Resumido);
+      this.casosCidades.forEach(el => {
+        this._createCircle(el);
+      });
+    });
   }
 
   private _createCircle(pt: any) {
@@ -115,6 +122,10 @@ export class MapComponent implements AfterViewInit {
     circleSource.addFeature(
       new Feature(new Circle(olProj.fromLonLat(pt.Coordenadas), 2000))
     );
+
+    setTimeout(() => {
+    this.map.updateSize();
+    }, 300);
   }
 
   private _createPolygon(coords: any[], type: any, color: any) {

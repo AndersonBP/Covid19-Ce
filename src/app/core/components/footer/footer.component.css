@@ -1,16 +1,30 @@
 p {
   text-align: center;
-  font-size: small;
   margin: 0 0 2px;
 }
 
 a {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 footer {
-  padding: 12px;
-  font-size: 12px;
-  background: #211D25;
-  color: #FFFFFF;
+  flex-shrink: 0;
+  padding: 10px;
+  background: #211d25;
+  color: #ffffff;
+}
+@media only screen and (max-width: 800px) {
+  /* For tablets: */
+  p {
+    font-size: small;
+  }
+
+  footer {
+    padding: 7px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  p {
+    font-size: x-small;
+  }
 }
