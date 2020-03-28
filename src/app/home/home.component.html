@@ -1,13 +1,11 @@
 <mat-tab-group>
   <mat-tab label="Map">
-    <home-map [bairrosAfetados]="bairroAfetados" [casosCidades]="totalCidades"></home-map>
+    <home-map [bairrosAfetados]="bairroAfetados" [boletim]="ultimoBoletim" [casosCidades]="totalCidades"></home-map>
   </mat-tab>
-  <mat-tab label="Locais de atendimento">
+  <mat-tab label="Estatísticas">
+    <home-chart [className]="charts"></home-chart>
+  </mat-tab>
+  <mat-tab label="Locais de diagnósticos">
     <home-diagnotic></home-diagnotic>
-  </mat-tab>
-  <mat-tab label="Estatisticas">
-    <home-chart [className]="toggled ? 'charts collapsed' : 'charts'" [CidadeChatColumnData]="totalCidades"
-    [TotalDiasUf]="totalDiasUF">
-  </home-chart>
   </mat-tab>
 </mat-tab-group>

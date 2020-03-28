@@ -1,5 +1,6 @@
 .contact {
   width: 100%;
+  margin-bottom: 5em;
 }
 
 .contact ul {
@@ -28,6 +29,9 @@
   color: #737380;
 }
 
+.contact ul li mat-card {
+  flex: 1;
+}
 .contact ul li mat-card div {
   display: flex;
 }
@@ -41,4 +45,22 @@
 .contact ul li mat-card div+div {
   flex: 1;
   flex-direction: column;
+}
+
+@media only screen and (max-width: 1105px) {
+  .contact ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 745px) {
+  .contact ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .contact ul li mat-card div {
+    flex-direction: column;
+  }
 }

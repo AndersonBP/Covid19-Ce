@@ -82,5 +82,4 @@ export class DiagnoticPlaceComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
