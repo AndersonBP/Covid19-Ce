@@ -1,9 +1,27 @@
-<!-- <mat-card>
-  <div id="map" tabindex="1" class="map"></div>
-</mat-card> -->
-
-<div class="widget">
-  <!-- <app-header *ngIf="dashOpen"></app-header> -->
-  <home-dashboard *ngIf="dashOpen" [boletim]="boletim"></home-dashboard>
+<div class="dashboard">
+  <mat-card>
+    <mat-card-content class="panel-data confirmed">
+      <div class="number">
+        {{boletim.infectados}}
+      </div>
+      <p>Casos</p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-content class="panel-data deaths">
+      <div class="number">
+        {{boletim.obitos}}
+      </div>
+      <p>Mortes</p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-content class="panel-data recovered">
+      <div class="number">
+        {{boletim.recuperados}}
+      </div>
+      <p>Recuperados</p>
+    </mat-card-content>
+  </mat-card>
 </div>
 <div id="map" tabindex="1" class="map"></div>

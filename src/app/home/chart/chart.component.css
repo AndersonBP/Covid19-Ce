@@ -1,3 +1,12 @@
 .chart {
-  /* margin: 16px; */
+  display: flex;
+  margin: 0 1em;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart mat-card {
+  flex: 1;
+  margin: 1em 0;
+  max-width: 700px;
 }

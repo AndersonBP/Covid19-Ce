@@ -1,18 +1,20 @@
-<mat-card class="contact">
-  <mat-card-title>Locais de diagnóstico</mat-card-title>
-  <mat-card-content>
-    <mat-accordion scrolling>
-      <mat-expansion-panel *ngFor="let contact of contacts">
-        <mat-expansion-panel-header>
-          <div class="contact-title">
-            <span>{{ contact.title }}</span>
-            <span>{{ contact.phone }}</span>
+<div class="contact">
+  <ul>
+    <li *ngFor="let contact of contacts">
+      <mat-card>
+        <strong>{{ contact.city }}</strong>
+        <p>{{ contact.title }}</p>
+        <div>
+          <div>
+            <strong>Endereço: </strong>
+            <p>{{ contact.address }}</p>
           </div>
-        </mat-expansion-panel-header>
-        <span>
-          <strong>Endereço: </strong>{{ contact.address }}
-        </span>
-      </mat-expansion-panel>
-    </mat-accordion>
-  </mat-card-content>
-</mat-card>
+          <div>
+            <strong>Telefone: </strong>
+            <p>{{ contact.phone }}</p>
+          </div>
+        </div>
+      </mat-card>
+    </li>
+  </ul>
+</div>
