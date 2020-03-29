@@ -50,3 +50,9 @@ li {
 a:link { 
  text-decoration:none; 
 } 
+
+img,a{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
