@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
 import { LoadingService } from "./core/services/loading.service";
-import { BoletimService } from "./core/services/api/boletim.service";
 
 @Component({
   selector: "app-root",
@@ -9,18 +8,13 @@ import { BoletimService } from "./core/services/api/boletim.service";
 })
 export class AppComponent {
   title = "Covid19-Ce";
-  ultimaAtualizacao = "";
-  constructor(
-    private boletimService: BoletimService,
-    private _loadingService: LoadingService
-  ) {
+
+  constructor(private _loadingService: LoadingService) {
     _loadingService.init(this);
-    this.boletimService.getTotais().subscribe(res => {
-      this.ultimaAtualizacao = new Date(res.Data[0].data).toLocaleDateString();
-    });
   }
 
   loading = false;
+
 
   show(): void {
     setTimeout(() => {

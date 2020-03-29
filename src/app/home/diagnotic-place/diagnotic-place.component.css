@@ -1,40 +1,66 @@
-mat-card {
-  margin-top: .5em;
+.contact {
+  width: 100%;
+  margin-bottom: 5em;
 }
 
-mat-accordion {
-  overflow-y: hidden;
-  max-height: 790px;
+.contact ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px;
+  list-style: none;
+  padding-inline-start: 1em;
+  margin-inline-end: 1em;
 }
 
-mat-card > mat-card-content {
-  margin-top: 1.2em;
-}
-
-mat-card > mat-card-content div {
+.contact ul li {
   display: flex;
+}
+
+.contact ul li strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact ul li p + strong {
+  margin-top: 32px;
+}
+
+.contact ul li p {
+  color: #737380;
+}
+
+.contact ul li mat-card {
   flex: 1;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 5px;
+}
+.contact ul li mat-card div {
+  display: flex;
 }
 
-.contact-title {
-  margin-top: 0px !important;
-  margin-right: 10px;
-  align-items: center;
-}
-
-.contact-title > span {
+.contact ul li mat-card div div {
   flex: 2;
+  flex-direction: column;
+  margin-right: 1em;
 }
 
-.contact-title > span+span {
+.contact ul li mat-card div+div {
   flex: 1;
+  flex-direction: column;
 }
 
-mat-expansion-panel-header {
-  display: flex;
-  padding: 0 0.6em;
-  font-size: .9em;
+@media only screen and (max-width: 1105px) {
+  .contact ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 745px) {
+  .contact ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .contact ul li mat-card div {
+    flex-direction: column;
+  }
 }

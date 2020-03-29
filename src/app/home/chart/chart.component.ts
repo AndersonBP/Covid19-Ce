@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { GoogleChartInterface } from "ng2-google-charts/google-charts-interfaces";
-import { debounceTime } from "rxjs/operators";
+import { BoletimService } from 'src/app/core/services/api/boletim.service';
 
 @Component({
   selector: "home-chart",
@@ -8,17 +8,15 @@ import { debounceTime } from "rxjs/operators";
   styleUrls: ["./chart.component.css"]
 })
 export class ChartComponent implements OnInit {
-  @Input() CidadeChatColumnData: {
+  CidadeChatColumnData: {
     Cidade: string;
     Infectados: number;
     Obitos: number;
   }[] = [];
 
-  @Input() TotalDiasUf: any[];
+  TotalDiasUf: any[];
 
-  toggled = true;
-
-  constructor() {
+  constructor(private boletimService: BoletimService) {
     window.onresize = e => {
       this.load();
     };
@@ -27,9 +25,16 @@ export class ChartComponent implements OnInit {
   public lineChart: GoogleChartInterface;
 
   ngOnInit() {
+    this.boletimService.getTotalCidades().subscribe(res => {
+      this.CidadeChatColumnData = res.Data.map(el => el.Resumido);
+    });
+    this.boletimService.getTotalDiaUF().subscribe(res => {
+      this.TotalDiasUf = res.Data.map((el) => el.Totais).reverse();
+    });
+
     setTimeout(() => {
       this.load();
-    }, 3000);
+    }, 1000);
   }
 
   load() {
@@ -51,16 +56,6 @@ export class ChartComponent implements OnInit {
     };
     this.lineChart = {
       chartType: "LineChart",
-      // dataTable: [
-      //   ["Dia", "Infectados", "Óbitos"],
-      //   ["16/03", 2, 0],
-      //   ["17/03", 10, 0],
-      //   ["18/03", 19, 0],
-      //   ["19/03", 23, 0],
-      //   ["20/03", 66, 0],
-      //   ["21/03", 82, 0],
-      //   ["22/03", 124, 0]
-      // ],
       dataTable: [
         ["Dia", "Infectados", "Taxa de crescimento", "Óbitos"]
       ].concat(
@@ -77,9 +72,5 @@ export class ChartComponent implements OnInit {
         title: "Contaminação"
       }
     };
-  }
-
-  toggleDiv() {
-    this.toggled = !this.toggled;
   }
 }
