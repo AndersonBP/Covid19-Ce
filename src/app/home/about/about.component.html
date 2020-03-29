@@ -1,27 +1,163 @@
-<div class="container">
-  <p>Um grupo de amigos motivados pela atual problemática envolvendo o novo Corona Vírus, Covid-19, busca contribuir
-    com
-    o estado
-    do Ceará.
-    Então surge o projeto "Mapa Covid19 CE" <br />
-    Um projeto free e open source.</p>
-  <p>
-    O objetivo da aplicação é auxiliar e acompanhar o avanço do Covid-19 no estado do Ceará.<br />
-    Apresentar os locais disponibilizados para atendimentos, exames, bem como informar capacidade de atendimento.<br />
-    Apresentar Graficos relacionados ao Covid-19 no estado do ceara.</p>
-  <p style="align-self: center;
-  text-align: justify;">
-    Colaboradores/Voluntários: <br />
-    - Anderson Benevides <br />
-    - Victor Sampaio <br />
-    - Midana Sana <br />
-    - Leandro Jackson<br />
-    - Flabio Assunção <br />
-    - David Pereira <br />
-    - Francisco Jocelio Junior <br />
-    - Luiz Lucas <br />
-    - Francisco de Assis Junior <br />
-    - Tiago Alencar <br />
-    <p><b>Fale conosco: </b> cecovid19@gmail.com<br />
-      <a href="https://github.com/AndersonBP/Covid19-Ce">Conheça projeto</a>
+<div class="container" style="margin: 4% 4% 12% !important;">
+
+  <h1 mat-display-1>
+    <b>Sobre nós</b>
+  </h1>
+
+  <p mat-h2>
+    Um grupo de amigos motivados pela atual problemática envolvendo a pandemia
+    do novo coronavírus (Covid-19), busca contribuir com o Estado do Ceará.
+    Então, assim surge o “Mapa Covid19 CE”. <br />
+    Um projeto <i>free</i> e <i>open source</i>.
+  </p>
+
+  <p mat-h2>
+    O objetivo da aplicação é auxiliar, acompanhar e demonstrar graficamente as
+    ações de combate ao Covid-19 no Estado do Ceará. Apresentando os locais
+    disponibilizados para atendimento específico e realização de exames.
+  </p>
+
+  <mat-grid-list cols="1" rowHeight="50px" style="margin-top: 15px;">
+    <mat-grid-tile>
+      <mat-list>
+        <mat-list-item>
+          <h2 mat-display-3><b>Colaboradores/Voluntários:</b></h2>
+        </mat-list-item>
+      </mat-list>
+    </mat-grid-tile>
+    
+  </mat-grid-list>
+
+  <mat-grid-list [cols]="breakpoint" rowHeight="3:1" (window:resize)="onResize($event)">
+    <mat-grid-tile>
+      <mat-list>
+        <mat-list-item>
+          <img matListAvatar src="https://media-exp1.licdn.com/dms/image/C4E03AQHJaZL7bwpM6A/profile-displayphoto-shrink_200_200/0?e=1591228800&v=beta&t=e5ygEnVIr9fNDLTJZnwTWlj31_92ffOFwZtXHofTCB0" alt="...">
+          <h3 matLine> Anderson Benevides </h3>
+          <p matLine>
+            <span> <a href="https://github.com/AndersonBP" target="_blank"> GitHub </a> </span>
+            <span class="demo-2"> - <a href="https://www.linkedin.com/in/anderson-benevides-258893a0/" target="_blank">LinkedIn</a> </span>
+          </p>
+        </mat-list-item>
+      </mat-list>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-list>
+        <mat-list-item>
+          <img matListAvatar src="https://media-exp1.licdn.com/dms/image/C5103AQHnPGmJJdU8hQ/profile-displayphoto-shrink_200_200/0?e=1591228800&v=beta&t=jrTs0_3j3K3cQiK6DJLYb8zRX5y6suIB9iNIzXq1VmI" alt="...">
+          <h3 matLine> Victor Sampaio </h3>
+          <p matLine>
+            <span> <a href="https://github.com/victorsampaio" target="_blank">GitHub</a> </span>
+            <span class="demo-2"> - <a href="https://www.linkedin.com/in/victorsampaio/" target="_blank">LinkedIn</a> </span>
+          </p>
+       </mat-list-item>
+      </mat-list>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-list>
+      <mat-list-item>
+        <img matListAvatar src="https://media-exp1.licdn.com/dms/image/C4E03AQH2jtZy8P5Jdg/profile-displayphoto-shrink_200_200/0?e=1591228800&v=beta&t=RYWUU_SsFClCewoYuyX_p_vrjQLUMBy_AGBezbI76Qo" alt="...">
+        <h3 matLine> Midana Sana </h3>
+        <p matLine>
+          <span> <a href="https://github.com/midanaf" target="_blank">GitHub</a> </span>
+          <span class="demo-2"> - <a href="https://www.linkedin.com/in/midana-sana-70281431/" target="_blank">LinkedIn</a> </span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-list>
+      <mat-list-item>
+        <img matListAvatar src="https://media-exp1.licdn.com/dms/image/C4E03AQH800crVbYknw/profile-displayphoto-shrink_200_200/0?e=1591228800&v=beta&t=Ast_QYeAwWJ3-SOsosKolfMbNbYS_fK5x2bYLm56xRM" alt="...">
+        <h3 matLine> Leandro Jackson </h3>
+        <p matLine>
+          <span> <a href="https://github.com/leandrojpinh" target="_blank">GitHub</a> </span>
+          <span class="demo-2"> - <a href="https://www.linkedin.com/in/lejapinh/" target="_blank">LinkedIn</a> </span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-list>
+      <mat-list-item>
+        <img matListAvatar src="https://media-exp1.licdn.com/dms/image/C4E03AQGOutdGvoB9KA/profile-displayphoto-shrink_200_200/0?e=1591228800&v=beta&t=a4VMqRsX5_enEnrxS2zQprlTB5UOqvn1_uS4eLdEGhM" alt="...">
+        <h3 matLine> David Pereira </h3>
+        <p matLine>
+          <span> <a href="https://github.com/davidpereiras" target="_blank">GitHub</a> </span>
+          <span class="demo-2"> - <a href="https://www.linkedin.com/in/davidpereirasilva/" target="_blank">LinkedIn</a> </span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-list>
+      <mat-list-item>
+        <img matListAvatar src="https://media-exp1.licdn.com/dms/image/C5603AQFr0QQ53Ik4Iw/profile-displayphoto-shrink_200_200/0?e=1591228800&v=beta&t=IwXKzBmnR2cznFXWXd2V2q2aXsvTjHnhcIPOUckM1Qw" alt="...">
+        <h3 matLine> Flábio Assunção </h3>
+        <p matLine>
+          <span> <a href="https://github.com/flabioassuncao" target="_blank">GitHub</a> </span>
+          <span class="demo-2"> - <a href="https://www.linkedin.com/in/flabio-assuncao/" target="_blank">LinkedIn</a> </span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-list>
+      <mat-list-item>
+        <img matListAvatar src="https://media-exp1.licdn.com/dms/image/C5603AQFD6CmAp-bKUA/profile-displayphoto-shrink_200_200/0?e=1591228800&v=beta&t=jykse3fe_qsCuj-alv5AIH6z-S_y9QMLi4Bfr-lf6xg" alt="...">
+        <h3 matLine> Francisco Jocelio </h3>
+        <p matLine>
+          <span> <a href="https://github.com/chicojunior" target="_blank">GitHub</a> </span>
+          <span class="demo-2"> - <a href="https://www.linkedin.com/in/franciscovale/" target="_blank">LinkedIn</a> </span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+    </mat-grid-tile> 
+    <mat-grid-tile>
+      <mat-list>
+      <mat-list-item>
+        <img matListAvatar src="https://media-exp1.licdn.com/dms/image/C4E03AQGTApD3bufAjA/profile-displayphoto-shrink_200_200/0?e=1591228800&v=beta&t=702rkCWuZpPPh0W4dXkIvrQ6mI3S_elR6BgfCeuGZK8" alt="...">
+        <h3 matLine> Luiz Lucas </h3>
+        <p matLine>
+          <!-- <span> <a href="" target="_blank">GitHub -</a> </span> -->
+          <span class="demo-2"> <a href="https://www.linkedin.com/in/luiz-lucas-gx/" target="_blank">LinkedIn</a> </span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+    </mat-grid-tile> 
+
+    <mat-grid-tile>
+      <mat-list>
+      <mat-list-item>
+        <img matListAvatar src="https://media-exp1.licdn.com/dms/image/C4E03AQGeZQG9hcsssA/profile-displayphoto-shrink_200_200/0?e=1591228800&v=beta&t=_f0t9HP9uzuHMSvcoAWig96tg32XG3tCO3em45iPMI8" alt="...">
+        <h3 matLine> Francisco de Assis </h3>
+        <p matLine>
+          <span> <a href="https://github.com/FcoJunior" target="_blank">GitHub</a> </span>
+          <span class="demo-2"> - <a href="https://www.linkedin.com/in/fcojunr/" target="_blank">LinkedIn</a> </span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+    </mat-grid-tile> 
+    <mat-grid-tile>
+      <mat-list>
+      <mat-list-item>
+        <img matListAvatar src="https://media-exp1.licdn.com/dms/image/C4E03AQGYz9R3jFu6-g/profile-displayphoto-shrink_200_200/0?e=1591228800&v=beta&t=gX93hgAZJ9lmwxvv80FqBPNM9xfO2Jy4D3xNPCrHvF8" alt="...">
+        <h3 matLine> Tiago Alencar </h3>
+        <p matLine>
+          <span> <a href="https://github.com/tioago" target="_blank">GitHub</a> </span>
+          <span class="demo-2"> - <a href="https://www.linkedin.com/in/tiagoalencar84/" target="_blank">LinkedIn</a> </span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+  <p class="mat-h3">
+    <b>Fale conosco: </b> cecovid19@gmail.com<br />
+    <a href="https://github.com/AndersonBP/Covid19-Ce">Conheça o projeto</a>
+  </p>
 </div>
