@@ -19,6 +19,7 @@ import { DatePipe } from '@angular/common';
 import { QuestionsComponent } from './home/questions/questions.component';
 import { AboutComponent } from './home/about/about.component';
 import { environment } from '../environments/environment';
+import { InformativeComponent } from './home/informative/informative.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { environment } from '../environments/environment';
     DiagnoticPlaceComponent,
     DashboardComponent,
     QuestionsComponent,
-    AboutComponent
+    AboutComponent,
+    InformativeComponent
   ],
   imports: [
     MaterialModule,
