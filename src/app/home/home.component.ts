@@ -1,9 +1,6 @@
-import { TotalModel } from "./../core/services/api/models/total.model";
 import { BoletimService } from "./../core/services/api/boletim.service";
 import { AfterViewInit, Component, OnInit } from "@angular/core";
 import { BoletimModel } from "../core/services/api/models/boletim.model";
-import { BairrosService } from "../core/services/api/bairros.service";
-import { DatePipe } from '@angular/common'
 
 @Component({
   selector: "app-home",
@@ -12,9 +9,7 @@ import { DatePipe } from '@angular/common'
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   constructor(
-    private boletimService: BoletimService,
-    private bairrosService: BairrosService,
-    public datepipe: DatePipe
+    private boletimService: BoletimService
   ) { }
 
   ultimoBoletim = new BoletimModel();
@@ -30,21 +25,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.boletimService.getTotais().subscribe(res => {
       this.ultimoBoletim = res.Data[0];
     });
-
-    this.boletimService.getTotalCidades().subscribe(res => {
-      this.totalCidades = res.Data.map(el => el.Resumido);
-    });
-    this.boletimService.getTotalDiaUF().subscribe(res => {
-      this.totalDiasUF = res.Data.map((el) => el.Totais).reverse();
-    });
-    this.boletimService.getTotais().subscribe(res => {
-      this.ultimaAtualizacao = this.datepipe.transform(new Date(res.Data[0].data), 'yy MMM');
-    });
   }
 
   collapseCharts() {
     this.toggled = !this.toggled;
   }
-
-
 }

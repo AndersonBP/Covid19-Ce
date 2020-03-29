@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
 html,
 body {
   height: 100%;
-  background: #f8f7fa;
+  background: #F8F7FA;
   margin: 0;
+  padding: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
@@ -12,6 +14,26 @@ body {
   z-index: 999 !important;
 }
 
-.shadow {
-  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+@media only screen and (max-width: 800px) {
+  /* For tablets: */
 }
+@media only screen and (max-width: 500px) {
+  /* For mobile phones: */
+  /* Cards */
+  /* .mat-card {
+    max-width: 47px;
+    max-height: 47px;
+  }
+  .mat-card-title {
+    font-size: small;
+    font-weight: 500;
+  }
+  .mat-card-content {
+    font-size: small !important;
+    padding: 0px 0px !important;
+  } */
+  /* Cards */
+}
+
+
+/* #211D25, #4D4852, #FCEAFF, #00C9AA */

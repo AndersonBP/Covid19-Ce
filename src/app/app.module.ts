@@ -16,6 +16,9 @@ import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { BlockUIModule } from 'ng-block-ui';
 import { NgxLoadingModule } from 'ngx-loading';
 import { DatePipe } from '@angular/common';
+import { QuestionsComponent } from './home/questions/questions.component';
+import { AboutComponent } from './home/about/about.component';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -25,7 +28,9 @@ import { DatePipe } from '@angular/common';
     MapComponent,
     ChartComponent,
     DiagnoticPlaceComponent,
-    DashboardComponent
+    DashboardComponent,
+    QuestionsComponent,
+    AboutComponent
   ],
   imports: [
     MaterialModule,

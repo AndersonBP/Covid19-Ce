@@ -1,3 +1,21 @@
 .chart {
-  /* margin: 16px; */
+  padding: 1em;
+  flex-wrap: wrap;
+  margin-bottom: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart mat-card {
+  flex: 1;
+  max-width: 600px;
+  margin-bottom: 1em;
+}
+
+@media only screen and (max-width: 655px) {
+  .chart mat-card {
+    max-width: 100%;
+  }
 }

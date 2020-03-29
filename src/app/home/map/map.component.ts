@@ -1,16 +1,13 @@
 import { AfterViewInit, Component, Input } from "@angular/core";
-import { TotalModel } from "./../../core/services/api/models/total.model";
-import { defaults as defaultControls } from "ol/control";
 import Map from "ol/Map";
 import View from "ol/View";
 import TileLayer from "ol/layer/Tile";
 import * as olProj from "ol/proj";
 import { Feature } from "ol";
-import { Icon, Style, Stroke, Text, Fill } from "ol/style";
+import { Style, Stroke, Text, Fill } from "ol/style";
 import VectorSource from "ol/source/Vector";
 import VectorLayer from "ol/layer/Vector";
-import OSM from "ol/source/OSM";
-import { MouseWheelZoom, defaults, DragPan } from "ol/interaction";
+import { defaults } from "ol/interaction";
 import Circle from "ol/geom/Circle";
 import { Coordinate } from "ol/coordinate";
 import Polygon from "ol/geom/Polygon";
@@ -18,7 +15,6 @@ import LineString from "ol/geom/LineString";
 
 import { BairroAfetadoModel } from "./../../core/services/api/models/bairroAfetado.model";
 import { BoletimModel } from "src/app/core/services/api/models/boletim.model";
-import { trigger, transition, style, animate } from "@angular/animations";
 import TileImage from "ol/source/TileImage";
 import { BoletimService } from "src/app/core/services/api/boletim.service";
 import { BairrosService } from "src/app/core/services/api/bairros.service";
@@ -32,7 +28,6 @@ export class MapComponent implements AfterViewInit {
   @Input() boletim = new BoletimModel();
   @Input() casosCidades: any[];
   @Input() dashOpen = false;
-  @Input() ultimaAtualizacao = "";
   map: Map;
   vectorSource: any;
   vectorLayer: any;
@@ -56,14 +51,10 @@ export class MapComponent implements AfterViewInit {
         new TileLayer({
           visible: true,
           source: new TileImage({
-            // tslint:disable-next-line:max-line-length
             url:
               "https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ZvcnRkZXZlbG9wZXIiLCJhIjoiY2poZHgwNGhwMGo5MDMwbzdjMTc3eDRiaiJ9.P6jtKCrEbI5MqimmQI-oJg"
           })
         }),
-        // new TileLayer({
-        //   source: new OSM()
-        // }),
         this.vectorLayer
       ],
       view: new View({
