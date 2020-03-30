@@ -5,7 +5,7 @@
   "tasks": [
     {
       "type": "shell",
-      "command": "ng serve -o",
+      "command": "ng serve -o --port 4201",
       "label": "serve-dev",
       "problemMatcher": []
     },

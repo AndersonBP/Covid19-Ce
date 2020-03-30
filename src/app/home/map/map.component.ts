@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, Input } from "@angular/core";
+import {
+  AfterViewInit,
+  Component,
+  Input,
+  ViewChild,
+  ElementRef
+} from "@angular/core";
 import Map from "ol/Map";
 import View from "ol/View";
 import TileLayer from "ol/layer/Tile";
@@ -28,6 +34,7 @@ export class MapComponent implements AfterViewInit {
   @Input() boletim = new BoletimModel();
   @Input() casosCidades: any[];
   @Input() dashOpen = false;
+  @ViewChild("map", { static: true }) private mapVC: ElementRef;
   map: Map;
   vectorSource: any;
   vectorLayer: any;
@@ -44,7 +51,7 @@ export class MapComponent implements AfterViewInit {
     });
     this.map = new Map({
       interactions: defaults({
-        onFocusOnly: false
+        onFocusOnly: true
       }),
       target: "map",
       layers: [
@@ -63,7 +70,6 @@ export class MapComponent implements AfterViewInit {
         minZoom: 7
       })
     });
-
     this.bairrosService.getAfetados().subscribe(res => {
       this.bairrosAfetados = res.Data;
       this.bairrosAfetados
@@ -75,6 +81,8 @@ export class MapComponent implements AfterViewInit {
       this.casosCidades.forEach(el => {
         this._createCircle(el);
       });
+      this.mapVC.nativeElement.click();
+      this.mapVC.nativeElement.focus();
     });
   }
 
@@ -115,7 +123,7 @@ export class MapComponent implements AfterViewInit {
     );
 
     setTimeout(() => {
-    this.map.updateSize();
+      this.map.updateSize();
     }, 300);
   }
 
