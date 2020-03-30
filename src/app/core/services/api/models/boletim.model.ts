@@ -9,7 +9,7 @@ export class BoletimModel extends Model implements IModel {
   @JsonProperty({ name: "obitos" })
   public obitos: number = 0;
 
-  @JsonProperty({ name: "Recuperados" })
+  @JsonProperty({ name: "recuperados" })
   public recuperados: number = 0;
 
   @JsonProperty({ name: "regioes" })

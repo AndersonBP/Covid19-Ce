@@ -44,11 +44,11 @@ namespace COVID.Service.Api
                 {
                     Version = "v1",
                     Title = "COVID.CE API",
-                    Description = "COVID no Cear·",
+                    Description = "COVID no Cear√°",
                     TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
                     {
-                        Name = "Our Contact - chama nÛs.",
+                        Name = "Our Contact - chama n√≥s.",
                         Email = string.Empty,
                         Url = new Uri("https://github.com/flabioassuncao"),
                     },

@@ -1,6 +1,6 @@
 mat-card {
   padding: 0px;
-  margin-left: .5em;
+  margin-left: 0.5em;
   opacity: 90%;
 }
 
@@ -13,9 +13,10 @@ mat-card {
 
 .dashboard {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   z-index: 9999;
   position: relative;
+  left: 15%;
 }
 
 .dashboard > mat-card {
@@ -58,6 +59,11 @@ mat-card {
 @media only screen and (max-width: 500px) {
   .dashboard > mat-card {
     width: 60px;
+    padding: 10px;
+  }
+
+  .dashboard {
+    left: 8%;
   }
 
   p {

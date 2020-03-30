@@ -69,7 +69,7 @@ export class ChartComponent implements OnInit {
       options: {
         legend: { position: "top", alignment: "center" },
         backgroundColor: "white",
-        title: "Contaminação"
+        title: "Contaminação",
       }
     };
   }
