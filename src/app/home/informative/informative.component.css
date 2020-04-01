@@ -37,14 +37,22 @@ ul.nav-pills li {
 
 ul {
   display: flex;
+  justify-content: center;
   flex-direction: row; 
   flex-wrap: wrap;
   list-style-type: none;
 }
 
-li {
-  width: calc(100% / 5);
+.lidiv {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   text-align: center;
+}
+
+li{
+  margin: auto;
+  width: 220px;
 }
 
 a:link { 
@@ -56,3 +64,4 @@ img,a{
   height: auto;
   display: block;
 }
+
