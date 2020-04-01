@@ -18,8 +18,8 @@ import { NgxLoadingModule } from 'ngx-loading';
 import { DatePipe } from '@angular/common';
 import { QuestionsComponent } from './home/questions/questions.component';
 import { AboutComponent } from './home/about/about.component';
+import { ChartsModule } from 'ng2-charts';
 import { environment } from '../environments/environment';
-
 
 @NgModule({
   declarations: [
@@ -33,6 +33,7 @@ import { environment } from '../environments/environment';
     AboutComponent
   ],
   imports: [
+    ChartsModule,
     MaterialModule,
     AppRoutingModule,
     CoreModule,

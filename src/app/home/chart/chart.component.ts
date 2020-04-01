@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { GoogleChartInterface } from "ng2-google-charts/google-charts-interfaces";
-import { BoletimService } from 'src/app/core/services/api/boletim.service';
+import { BoletimService } from "src/app/core/services/api/boletim.service";
 
 @Component({
   selector: "home-chart",
@@ -13,6 +13,12 @@ export class ChartComponent implements OnInit {
     Infectados: number;
     Obitos: number;
   }[] = [];
+  TotalDiasUfDataLine: {
+    Dia: any;
+    Infectados: any;
+    TaxaCrescimento: any;
+    Obtios: any;
+  }[] = [];
 
   TotalDiasUf: any[];
 
@@ -24,52 +30,76 @@ export class ChartComponent implements OnInit {
   public ColumnChart: GoogleChartInterface;
   public lineChart: GoogleChartInterface;
 
+  public charLineCrescimento: any;
+  public chartLineTotal: any;
+  public chartBarCidades: any;
+
   ngOnInit() {
     this.boletimService.getTotalCidades().subscribe(res => {
       this.CidadeChatColumnData = res.Data.map(el => el.Resumido);
+      this.boletimService.getTotalDiaUF().subscribe(res => {
+        this.TotalDiasUf = res.Data.map(el => el.Totais).reverse();
+        this.TotalDiasUfDataLine = this.TotalDiasUf.map((el: any, idx, col) => {
+          return {
+            Dia: el.Data,
+            Infectados: el.Infectados,
+            TaxaCrescimento:
+              idx == 0 ? 0 : el.Infectados - col[idx - 1].Infectados,
+            Obtios: el.Obitos
+          };
+        });
+        this.load();
+      });
     });
-    this.boletimService.getTotalDiaUF().subscribe(res => {
-      this.TotalDiasUf = res.Data.map((el) => el.Totais).reverse();
-    });
-
-    setTimeout(() => {
-      this.load();
-    }, 1000);
   }
 
   load() {
-    this.ColumnChart = {
-      chartType: "ColumnChart",
-      dataTable: [["Country", "Infectados", "Óbitos"]].concat(
-        this.CidadeChatColumnData.map((el: any) => [
-          el.Cidade.trim(),
-          el.Infectados,
-          el.Obitos
-        ])
-      ),
-      options: {
-        legend: { position: "top", alignment: "center" },
-        backgroundColor: "white",
-        title: "Cidades",
-        bar: { groupWidth: "100%" }
+    this.charLineCrescimento = {
+      DataSets: [
+        {
+          data: this.TotalDiasUfDataLine.map(el => el.TaxaCrescimento),
+          label: "Taxa de Crescimento"
+        }
+      ],
+      Labels: this.TotalDiasUfDataLine.map(el => el.Dia),
+      Options: {
+        responsive: true
+      },
+      Color: [
+        {
+          borderColor: "black",
+          backgroundColor: "rgba(255,255,0,0.28)"
+        }
+      ]
+    };
+
+    this.chartLineTotal = {
+      DataSets: [
+        {
+          data: this.TotalDiasUfDataLine.map(el => el.Infectados),
+          label: "Total casos"
+        }
+      ],
+      Labels: this.TotalDiasUfDataLine.map(el => el.Dia),
+      Options: {
+        responsive: true
       }
     };
-    this.lineChart = {
-      chartType: "LineChart",
-      dataTable: [
-        ["Dia", "Infectados", "Taxa de crescimento", "Óbitos"]
-      ].concat(
-        this.TotalDiasUf.map((el: any, idx, col) => [
-          el.Data,
-          el.Infectados,
-          idx == 0 ? 0 :  el.Infectados-col[idx - 1].Infectados,
-          el.Obitos
-        ])
-      ),
-      options: {
-        legend: { position: "top", alignment: "center" },
-        backgroundColor: "white",
-        title: "Contaminação",
+
+    let barDatas = this.CidadeChatColumnData.slice(0, 9).map((el: any) => {
+      return {
+        Cidade: el.Cidade.trim(),
+        Infectatos: el.Infectados,
+        Obitos: el.Obitos
+      };
+    });
+    this.chartBarCidades = {
+      DataSets: barDatas.map(el => {
+        return { data: el.Infectatos, label: "" };
+      }),
+      Labels: barDatas.map(el => el.Cidade),
+      Options: {
+        responsive: true
       }
     };
   }

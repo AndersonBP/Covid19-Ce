@@ -1,9 +1,27 @@
 <div class="chart">
   <mat-card>
-    <google-chart [data]="lineChart"></google-chart>
+    <div class="chart-wrapper">
+      <canvas baseChart [datasets]="charLineCrescimento.DataSets" [labels]="charLineCrescimento.Labels" [colors]="charLineCrescimento.Color" [options]="charLineCrescimento.Options"
+        [legend]="true" [chartType]="'line'" [plugins]="[]">
+      </canvas>
+    </div>
   </mat-card>
   <mat-card>
-    <google-chart [data]="ColumnChart"></google-chart>
+    <div class="chart-wrapper">
+      <canvas baseChart [datasets]="chartLineTotal.DataSets" [labels]="chartLineTotal.Labels" [options]="chartLineTotal.Options"
+        [legend]="true" [chartType]="'line'" [plugins]="[]">
+      </canvas>
+    </div>
   </mat-card>
+  <!-- <mat-card>
+    <div class="chart-wrapper">
+      <canvas baseChart
+      [datasets]="chartBarCidades.DataSets"
+      [labels]="chartBarCidades.Labels"
+      [options]="chartBarCidades.Options"
+      [legend]="true"
+      [chartType]="'horizontalBar'">
+    </canvas>
+  </div>
+  </mat-card> -->
 </div>
-
