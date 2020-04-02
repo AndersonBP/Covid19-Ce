@@ -58,8 +58,8 @@ mat-card {
 }
 @media only screen and (max-width: 500px) {
   .dashboard > mat-card {
-    width: 60px;
-    padding: 10px;
+    width: 70px;
+    padding: 9px;
   }
 
   .dashboard {

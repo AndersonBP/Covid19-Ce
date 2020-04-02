@@ -25,7 +25,7 @@ namespace COVID.Infra.Data.Repository
 
     public List<Total> TotalDiaUF(string uf)
     {
-      var sql = string.Format("select totalinfectados, totalobitos, data from totalcidade e where uf='{0}' group  by totalinfectados, totalobitos, data order by data desc limit 7", uf.ToUpper());
+      var sql = string.Format("select totalinfectados, totalobitos, data from totalcidade e where uf='{0}' group  by totalinfectados, totalobitos, data order by data desc limit 15", uf.ToUpper());
       var total = Db.Database.GetDbConnection().Query<Domain.Entities.Views.Totais.Total>(sql);
 
       return total.ToList();
