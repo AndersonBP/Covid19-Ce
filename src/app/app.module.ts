@@ -20,6 +20,7 @@ import { QuestionsComponent } from './home/questions/questions.component';
 import { AboutComponent } from './home/about/about.component';
 import { ChartsModule } from 'ng2-charts';
 import { environment } from '../environments/environment';
+import { InformativeComponent } from './home/informative/informative.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { environment } from '../environments/environment';
     DiagnoticPlaceComponent,
     DashboardComponent,
     QuestionsComponent,
-    AboutComponent
+    AboutComponent,
+    InformativeComponent
   ],
   imports: [
     ChartsModule,
