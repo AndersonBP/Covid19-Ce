@@ -21,6 +21,7 @@ namespace COVID.Application.ViewModels
     public long Recuperados { get; set; }
     public long Suspeitos { get; set; }
     public string NomeCidade { get; set; }
+    public string jsoncoordenada { get; set; }
 
     public decimal Latitude { get; set; }
     public decimal Longitude { get; set; }

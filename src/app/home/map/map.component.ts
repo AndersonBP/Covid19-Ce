@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, Input } from "@angular/core";
+import {
+  AfterViewInit,
+  Component,
+  Input,
+  ViewChild,
+  ElementRef
+} from "@angular/core";
 import Map from "ol/Map";
 import View from "ol/View";
 import TileLayer from "ol/layer/Tile";
@@ -18,6 +24,7 @@ import { BoletimModel } from "src/app/core/services/api/models/boletim.model";
 import TileImage from "ol/source/TileImage";
 import { BoletimService } from "src/app/core/services/api/boletim.service";
 import { BairrosService } from "src/app/core/services/api/bairros.service";
+import { TotalModel } from "src/app/core/services/api/models/total.model";
 @Component({
   selector: "home-map",
   templateUrl: "./map.component.html",
@@ -28,9 +35,10 @@ export class MapComponent implements AfterViewInit {
   @Input() boletim = new BoletimModel();
   @Input() casosCidades: any[];
   @Input() dashOpen = false;
+  @ViewChild("map", { static: true }) private mapVC: ElementRef;
   map: Map;
-  vectorSource: any;
-  vectorLayer: any;
+  vectorSource: VectorSource;
+  vectorLayer: VectorLayer;
 
   constructor(
     private boletimService: BoletimService,
@@ -44,7 +52,7 @@ export class MapComponent implements AfterViewInit {
     });
     this.map = new Map({
       interactions: defaults({
-        onFocusOnly: false
+        onFocusOnly: true
       }),
       target: "map",
       layers: [
@@ -64,16 +72,45 @@ export class MapComponent implements AfterViewInit {
       })
     });
 
-    this.bairrosService.getAfetados().subscribe(res => {
-      this.bairrosAfetados = res.Data;
-      this.bairrosAfetados
-        .map(el => el.coordenadas.map(y => [y.longitude, y.latitude]))
-        .forEach(el => this._createPolygon(el, "2", "rgba(255,100,50,0.5)"));
-    });
     this.boletimService.getTotalCidades().subscribe(res => {
       this.casosCidades = res.Data.map(el => el.Resumido);
-      this.casosCidades.forEach(el => {
-        this._createCircle(el);
+      res.Data.forEach((el: TotalModel) => {
+        if (el.Polygon.length > 0) {
+          this._createPolygon(
+            el.Polygon,
+            "2",
+            "rgba(255,100,50,0.3)",
+            new Text({
+              font: "Normal 15px Arial",
+              textAlign: "center",
+              textBaseline: "middle",
+              text: `${
+                el.Resumido.Cidade
+              } - ${el.Resumido.Infectados.toString()}`,
+              fill: new Fill({
+                color: "#ffa500"
+              }),
+              stroke: new Stroke({
+                color: "#000000",
+                width: 3
+              }),
+              // offsetX: -45,
+              rotation: 0
+            })
+          );
+        } else {
+            this._createCircle(el.Resumido);
+        }
+      });
+      this.mapVC.nativeElement.click();
+      this.mapVC.nativeElement.focus();
+      this.bairrosService.getAfetados().subscribe(res => {
+        this.bairrosAfetados = res.Data;
+        this.bairrosAfetados
+          .map(el => el.coordenadas.map(y => [y.longitude, y.latitude]))
+          .forEach(el =>
+            this._createPolygon(el, "2", "rgba(255, 243, 79,0.5)")
+          );
       });
     });
   }
@@ -91,7 +128,7 @@ export class MapComponent implements AfterViewInit {
         font: "Normal 15px Arial",
         textAlign: "center",
         textBaseline: "middle",
-        text: `${pt.Cidade} - ${pt.Infectados.toString()} casos`,
+        text: `${pt.Cidade} - ${pt.Infectados.toString()}`,
         fill: new Fill({
           color: "#ffa500"
         }),
@@ -115,11 +152,16 @@ export class MapComponent implements AfterViewInit {
     );
 
     setTimeout(() => {
-    this.map.updateSize();
+      this.map.updateSize();
     }, 300);
   }
 
-  private _createPolygon(coords: any[], type: any, color: any) {
+  private _createPolygon(
+    coords: any[],
+    type: any,
+    color: any,
+    text: any = null
+  ) {
     let polyCoords: Coordinate[] = [];
 
     polyCoords = coords.map(e =>
@@ -147,16 +189,17 @@ export class MapComponent implements AfterViewInit {
         }),
         stroke: new Stroke({
           color: color,
-          width: 4
-        })
+          width: 3
+        }),
+        text: text
       })
     );
-
-    const layer = new VectorLayer({
-      source: new VectorSource({
-        features: [feature]
-      })
-    });
-    this.map.addLayer(layer);
+    this.vectorSource.addFeatures([feature]);
+    // const layer = new VectorLayer({
+    //   source: new VectorSource({
+    //     features: [feature]
+    //   })
+    // }) ;
+    // this.map.addLayer(layer);
   }
 }

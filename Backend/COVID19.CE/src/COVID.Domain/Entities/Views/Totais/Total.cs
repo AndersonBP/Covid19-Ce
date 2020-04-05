@@ -32,6 +32,8 @@ namespace COVID.Domain.Entities.Views.Totais
 
     public virtual ICollection<Regiao> Regioes { get; set; }
 
+    public string jsoncoordenada { get; set; }
+
     //public void AtribuirEndereco(Regiao regiao)
     //{
     //  if (!endereco.EhValido()) return;

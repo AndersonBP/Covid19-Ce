@@ -10,8 +10,9 @@
 
 .chart mat-card {
   flex: 1;
-  max-width: 600px;
+  width: 600px;
   margin-bottom: 1em;
+  /* max-width: 100%; */
 }
 
 @media only screen and (max-width: 655px) {

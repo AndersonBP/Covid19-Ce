@@ -39,6 +39,9 @@ export class TotalModel extends Model implements IModel {
   @JsonProperty({ name: "longitude" })
   public longitude: number = 0.0;
 
+  @JsonProperty({ name: "jsoncoordenada" })
+  public jsoncoordenada: string = "";
+
   get Resumido(): {
     Cidade: string;
     Infectados: number;
@@ -67,8 +70,19 @@ export class TotalModel extends Model implements IModel {
       Infectados: this.totalinfectados,
       Obitos: this.totalobitos,
       Coordenadas: [this.longitude, this.latitude],
-      Data: `${new Date(this.data).getMonth()+1}/${new Date(this.data).getDate()}`
+      Data: `${new Date(this.data).getMonth() + 1}/${new Date(
+        this.data
+      ).getDate()}`
     };
+  }
+
+  get Polygon(): [] {
+    if (this.jsoncoordenada.length <= 1) return [];
+
+    let obj = JSON.parse(this.jsoncoordenada).lista.map(y => {
+      return [y.longitude, y.latitude];
+    });
+    return obj;
   }
 
   static Create(json: any): TotalModel {
