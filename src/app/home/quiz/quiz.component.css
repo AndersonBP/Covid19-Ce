@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  margin: 1em 1em 1em;
+}
+
+mat-card-content > p {
+  margin-top: 1em;
+  font-size: 1.1em;
+}
+
+mat-card-content > div {
+  padding: .5em;
+  background-color: #fff3cd;
+  border: 1px solid transparent;
+  border-color: #ffeeba;
+  border-radius: 4px;
+}
+
+mat-card-content > div > p {
+  font-size: .9em;
+  font-weight: 500;
+  color: #856404;
+  margin: 0;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.quiz {
+  width: 100%;
+}

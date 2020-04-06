@@ -1,0 +1,48 @@
+<div class="container">
+  <mat-card *ngIf="!started">
+    <mat-card-header>
+      <mat-card-title>Questionário</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <p>
+        Se você sente alguns dos sintomas da doença COVID-19 (causada pelo coronavírus), responda um
+        rápido questionário e saiba quais medidas tomar.
+      </p>
+      <div>
+        <p>
+          Lembramos que todas as perguntas e respostas aqui trazidas são provenientes de uma <i>API REST</i> que não foi
+          desenvolvida por nós. Para mais detalhes clique em <strong>Saiba mais</strong> logo abaixo.
+        </p>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-raised-button href="https://developer.infermedica.com/docs/covid-19" target="_blank" color="accent">Saiba
+        mais</a>
+      <a mat-raised-button color="primary" (click)="startQuiz()">Iniciar</a>
+    </mat-card-actions>
+  </mat-card>
+  <div class="quiz" *ngIf="started">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ diagnosis.question.text }}</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <form #form="ngForm" (ngSubmit)="nextQuestion()">
+          <div *ngFor="let item of diagnosis.question.items">
+            <div [attr.for]="item.id">
+              <label>{{ item.name }}</label>
+              <label>{{ item.explanation }}</label>
+              <mat-radio-group>
+                <mat-radio-button *ngFor="let choice of item.choices" [value]="choice.id">
+                  {{ choice.label }}
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

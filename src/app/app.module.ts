@@ -21,6 +21,8 @@ import { AboutComponent } from './home/about/about.component';
 import { ChartsModule } from 'ng2-charts';
 import { environment } from '../environments/environment';
 import { InformativeComponent } from './home/informative/informative.component';
+import { QuizComponent } from './home/quiz/quiz.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { InformativeComponent } from './home/informative/informative.component';
     DashboardComponent,
     QuestionsComponent,
     AboutComponent,
-    InformativeComponent
+    InformativeComponent,
+    QuizComponent
   ],
   imports: [
     ChartsModule,
@@ -45,6 +48,7 @@ import { InformativeComponent } from './home/informative/informative.component';
     BlockUIModule.forRoot(),
     NgxLoadingModule.forRoot({
     }),
+    FormsModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
