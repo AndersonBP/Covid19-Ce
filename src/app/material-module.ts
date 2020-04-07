@@ -8,7 +8,8 @@ import {
   MatTabsModule,
   MatIconModule,
   MatButtonModule,
-  MatRadioModule
+  MatRadioModule,
+  MatInputModule
 } from "@angular/material";
 import { NgModule } from "@angular/core";
 
@@ -23,7 +24,8 @@ import { NgModule } from "@angular/core";
     MatTabsModule,
     MatIconModule,
     MatButtonModule,
-    MatRadioModule
+    MatRadioModule,
+    MatInputModule
   ]
 })
 export class MaterialModule {}

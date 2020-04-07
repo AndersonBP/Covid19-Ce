@@ -31,5 +31,37 @@ mat-card-actions {
 }
 
 .quiz {
+  display: flex;
+  justify-content: center;
   width: 100%;
+}
+
+.quiz .quiz-start {
+  max-width: 500px;
+  width: 100%;
+}
+
+form {
+  max-width: 500px;
+  width: 100%;
+  padding: 1em 0;
+}
+
+form > mat-form-field {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group-item{
+  margin: 5px;
+}
+
+.submit {
+  float: right;
+  margin-top: 1em;
 }

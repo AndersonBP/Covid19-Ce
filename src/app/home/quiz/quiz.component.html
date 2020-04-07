@@ -1,5 +1,5 @@
 <div class="container">
-  <mat-card *ngIf="!started">
+  <mat-card *ngIf="!isReady">
     <mat-card-header>
       <mat-card-title>Questionário</mat-card-title>
     </mat-card-header>
@@ -19,11 +19,36 @@
     <mat-card-actions>
       <a mat-raised-button href="https://developer.infermedica.com/docs/covid-19" target="_blank" color="accent">Saiba
         mais</a>
-      <a mat-raised-button color="primary" (click)="startQuiz()">Iniciar</a>
+      <a mat-raised-button color="primary" (click)="isReady=true">Iniciar</a>
     </mat-card-actions>
   </mat-card>
-  <div class="quiz" *ngIf="started">
-    <mat-card>
+  <div class="quiz" *ngIf="isReady">
+    <mat-card *ngIf="!isStarted" class="quiz-start">
+      <mat-card-header>
+        <mat-card-title>Antes de começar, preencha os dados abaixo para sua pesquisa ser ainda mais direcionada a você.
+        </mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <form (ngSubmit)="startQuiz()">
+          <mat-form-field>
+            <mat-label>Idade</mat-label>
+            <input matInput #age type="number" maxlength="3" placeholder="23" [(ngModel)]="quiz.age">
+            <mat-hint align="end">{{age.value.length}} / 3</mat-hint>
+          </mat-form-field>
+          <div class="input-group">
+            <mat-label>Sexo</mat-label>
+            <mat-radio-group [(ngModel)]="quiz.sex">
+              <mat-radio-button class="input-group-item" *ngFor="let sex of sexes" [value]="sex.value">
+                {{sex.label}}
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <button type="submit" mat-raised-button color="primary" class="submit">Próximo</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+    <mat-card *ngIf="isStarted">
       <mat-card-header>
         <mat-card-title>{{ diagnosis.question.text }}</mat-card-title>
       </mat-card-header>
@@ -45,4 +70,7 @@
       </mat-card-content>
     </mat-card>
   </div>
+</div>
+<div>
+
 </div>
