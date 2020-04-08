@@ -3,10 +3,10 @@ import { ObjectMapper, JsonProperty } from 'json-object-mapper';
 
 export class EvidenceModel extends Model implements IModel {
   @JsonProperty({ name: "id" })
-  public id: string;
+  public id: string = '';
 
   @JsonProperty({ name: "choice_id" })
-  public choiceId: string = '';
+  public choice_id: string = '';
 
   static Create(json: any): EvidenceModel {
     return ObjectMapper.deserialize<EvidenceModel>(EvidenceModel, json);

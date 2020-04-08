@@ -6,7 +6,7 @@ export class DiagnosisModel extends Model implements IModel {
   public question: any = null;
 
   @JsonProperty({ name: "should_stop" })
-  public shouldStop: boolean = false;
+  public should_stop: boolean = false;
 
   @JsonProperty({ name: "conditions" })
   public conditions: any[] = [];

@@ -9,67 +9,72 @@
         Se você sente alguns dos sintomas da doença COVID-19 (causada pelo coronavírus), responda um
         rápido questionário e saiba quais medidas tomar.
       </p>
-      <div>
+      <div class="warning">
         <p>
           Lembramos que todas as perguntas e respostas aqui trazidas são provenientes de uma <i>API REST</i> que não foi
           desenvolvida por nós. Para mais detalhes clique em <strong>Saiba mais</strong> logo abaixo.
         </p>
       </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <a mat-raised-button href="https://developer.infermedica.com/docs/covid-19" target="_blank" color="accent">Saiba
-        mais</a>
-      <a mat-raised-button color="primary" (click)="isReady=true">Iniciar</a>
-    </mat-card-actions>
-  </mat-card>
-  <div class="quiz" *ngIf="isReady">
-    <mat-card *ngIf="!isStarted" class="quiz-start">
-      <mat-card-header>
-        <mat-card-title>Antes de começar, preencha os dados abaixo para sua pesquisa ser ainda mais direcionada a você.
-        </mat-card-title>
-      </mat-card-header>
-      <mat-divider></mat-divider>
-      <mat-card-content>
-        <form (ngSubmit)="startQuiz()">
-          <mat-form-field>
-            <mat-label>Idade</mat-label>
-            <input matInput #age type="number" maxlength="3" placeholder="23" [(ngModel)]="quiz.age">
-            <mat-hint align="end">{{age.value.length}} / 3</mat-hint>
-          </mat-form-field>
-          <div class="input-group">
-            <mat-label>Sexo</mat-label>
-            <mat-radio-group [(ngModel)]="quiz.sex">
-              <mat-radio-button class="input-group-item" *ngFor="let sex of sexes" [value]="sex.value">
-                {{sex.label}}
-              </mat-radio-button>
-            </mat-radio-group>
+      <div *ngIf="!isStarted" class="quiz-start">
+        <strong>
+          Antes de começar, preencha os dados abaixo para sua pesquisa ser ainda mais direcionada a você.
+        </strong>
+        <form #form="ngForm">
+          <div class="fields">
+            <mat-form-field>
+              <mat-label>Idade</mat-label>
+              <input matInput #age name="age" type="number" maxlength="3" placeholder="23" [(ngModel)]="quiz.age" required>
+              <mat-hint align="end">{{age.value.length}} / 3</mat-hint>
+            </mat-form-field>
+            <div class="input-group">
+              <mat-label>Sexo</mat-label>
+              <mat-radio-group name="sex" [(ngModel)]="quiz.sex" required>
+                <mat-radio-button class="input-group-item" *ngFor="let sex of sexes" [value]="sex.value">
+                  {{sex.label}}
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
           </div>
-          <button type="submit" mat-raised-button color="primary" class="submit">Próximo</button>
+          <div class="actions">
+            <button mat-raised-button [disabled]="!form.valid" (click)="startQuiz()" color="primary">Iniciar</button>
+            <a mat-raised-button href="https://developer.infermedica.com/docs/covid-19" target="_blank">Saiba
+              mais</a>
+          </div>
         </form>
-      </mat-card-content>
-    </mat-card>
-    <mat-card *ngIf="isStarted">
-      <mat-card-header>
-        <mat-card-title>{{ diagnosis.question.text }}</mat-card-title>
-      </mat-card-header>
-      <mat-divider></mat-divider>
-      <mat-card-content>
-        <form #form="ngForm" (ngSubmit)="nextQuestion()">
-          <div *ngFor="let item of diagnosis.question.items">
-            <div [attr.for]="item.id">
-              <label>{{ item.name }}</label>
-              <label>{{ item.explanation }}</label>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="quiz" *ngIf="isReady">
+    <mat-card-header>
+      <mat-card-title>{{ diagnosis.question.text }}</mat-card-title>
+      <mat-card-subtitle>{{ diagnosis.question.explanation || '' }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <form #formQuiz="ngForm">
+        <div *ngFor="let item of diagnosis.question.items; let i = index">
+          <div [attr.for]="item.id" class="question">
+            <input type="hidden" value="item.id" />
+            <h3>{{ (i+1) + ': ' + item.name }}</h3>
+            <div *ngIf="item.explanation" class="info">
+              <p><strong>O que é isso? </strong>{{ item.explanation }}</p>
+            </div>
+            <div class="options">
               <mat-radio-group>
-                <mat-radio-button *ngFor="let choice of item.choices" [value]="choice.id">
+                <mat-radio-button *ngFor="let choice of item.choices" [value]="choice.id" (change)="addEvidence({ id: item.id, choiceId: choice.id })">
                   {{ choice.label }}
                 </mat-radio-button>
               </mat-radio-group>
             </div>
           </div>
-        </form>
-      </mat-card-content>
-    </mat-card>
-  </div>
+        </div>
+        <div class="actions">
+          <button mat-raised-button [disabled]="!isValid()" (click)="nextQuestion()" color="primary">Continuar</button>
+          <button mat-raised-button [disabled] (click)="leaveQuiz()" color="warn">Sair</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
 </div>
 <div>
 

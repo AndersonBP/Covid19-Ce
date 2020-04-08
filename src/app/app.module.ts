@@ -2,6 +2,7 @@ import { MaterialModule } from './material-module';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -23,6 +24,7 @@ import { environment } from '../environments/environment';
 import { InformativeComponent } from './home/informative/informative.component';
 import { QuizComponent } from './home/quiz/quiz.component';
 import { FormsModule } from '@angular/forms';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { FormsModule } from '@angular/forms';
     BlockUIModule.forRoot(),
     NgxLoadingModule.forRoot({
     }),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

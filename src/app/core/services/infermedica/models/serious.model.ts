@@ -9,7 +9,7 @@ export class SeriousModel extends Model implements IModel {
   public commonName: string;
 
   @JsonProperty({ name: "is_emergency" })
-  public isEmergency: boolean;
+  public is_emergency: boolean;
 
   @JsonProperty({ name: "name" })
   public name: string;

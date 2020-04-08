@@ -1,16 +1,18 @@
 .container {
   width: 100%;
-  max-width: 900px;
+  max-width: 600px;
   display: flex;
   margin: 1em 1em 1em;
 }
 
-mat-card-content > p {
+mat-card-content {
   margin-top: 1em;
+}
+mat-card-content > p {
   font-size: 1.1em;
 }
 
-mat-card-content > div {
+.warning {
   padding: .5em;
   background-color: #fff3cd;
   border: 1px solid transparent;
@@ -18,36 +20,43 @@ mat-card-content > div {
   border-radius: 4px;
 }
 
-mat-card-content > div > p {
+.warning > p {
   font-size: .9em;
   font-weight: 500;
   color: #856404;
   margin: 0;
 }
 
-mat-card-actions {
+.quiz-start {
+  margin-top: 1em;
+}
+
+.quiz-start > form {
   display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+}
+
+.quiz-start > form > div {
+  display: flex;
+}
+
+.quiz-start > form > .fields {
+  display: flex;
+  flex: 1;
+}
+
+.quiz-start > form > .actions {
   justify-content: space-between;
+  margin-top: 2em;
 }
 
-.quiz {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+.quiz-start > form > div > div {
+  flex: 2;
+  margin-left: 1em;
 }
 
-.quiz .quiz-start {
-  max-width: 500px;
-  width: 100%;
-}
-
-form {
-  max-width: 500px;
-  width: 100%;
-  padding: 1em 0;
-}
-
-form > mat-form-field {
+.quiz-start > form > mat-form-field {
   width: 100%;
   margin-bottom: 1em;
 }
@@ -64,4 +73,46 @@ form > mat-form-field {
 .submit {
   float: right;
   margin-top: 1em;
+}
+
+.quiz {
+  width: 100%;
+  margin-bottom: 3em;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+}
+
+.question > h3 {
+  margin-bottom: 0;
+}
+
+.question > .info {
+  padding: .5em;
+  background: rgba(0,0,0,.01);
+  border: .5px solid rgba(0,0,0,.03);
+  border-radius: 4px;
+}
+
+.question > .info > p {
+  font-size: .8em;
+  font-weight: 500;
+  margin: 0;
+}
+
+.question > .options {
+  margin: 1em 0 1.5em;
+}
+
+.options > mat-radio-group > mat-radio-button+mat-radio-button {
+  margin-left: 1em;
+}
+
+form > .actions {
+  margin-top: 2em;
+}
+form > .actions > button {
+  margin-right: .5em;
 }

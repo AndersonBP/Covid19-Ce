@@ -12,29 +12,46 @@ import { QuizModel } from 'src/app/core/services/infermedica/models/quiz.model';
 export class QuizComponent implements OnInit {
   public quiz: QuizModel;
   public diagnosis: DiagnosisModel;
-  public evidence: EvidenceModel;
 
+  evidencesByQuestion: EvidenceModel[] = [];
   isReady: boolean = false;
-  isStarted: boolean = false;
   sexes: any[];
 
   constructor(private quizService: InfermedicaService) { }
 
   ngOnInit() {
-    this.evidence = new EvidenceModel();
     this.quiz = new QuizModel();
     this.sexes = [{ value: 'male', label: 'Masculino' }, { value: 'female', label: 'Feminino' }];
   }
 
   startQuiz() {
-    this.quizService.diagnosis(this.quiz).subscribe(res => {
-      this.diagnosis = DiagnosisModel.Create(res);
+    this.isReady = true;
 
-      this.isStarted = true;
-    });
+    this.nextQuestion();
   }
 
   nextQuestion() {
+    this.quiz.evidence = this.quiz.evidence.concat(this.evidencesByQuestion);
 
+    this.quizService.diagnosis(this.quiz).subscribe(res => {
+      this.diagnosis = DiagnosisModel.Create(res);
+      console.log(this.diagnosis);
+      this.evidencesByQuestion = [];
+    });
+  }
+
+  addEvidence(item: any) {
+    const index = this.evidencesByQuestion.findIndex(f => f.id === item.id);
+    if (index >= 0) {
+      this.evidencesByQuestion[index].choice_id = item.choiceId;
+
+      return
+    }
+
+    this.evidencesByQuestion.push({ id: item.id, choice_id: item.choiceId } as EvidenceModel);
+  }
+
+  isValid() {
+    return this.evidencesByQuestion.length === this.diagnosis.question.items.length;
   }
 }

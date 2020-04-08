@@ -12,7 +12,7 @@ export class TriageModel extends Model implements IModel {
   public serious: any[];
 
   @JsonProperty({ name: "triage_level" })
-  public triageLevel: any;
+  public triage_level: any;
 
   static Create(json: any): TriageModel {
     return ObjectMapper.deserialize<TriageModel>(TriageModel, json);
@@ -44,6 +44,6 @@ export class TriageModel extends Model implements IModel {
       description: 'Ligue para o número de emergência. Evite todo contato.'
     }];
 
-    return levels.find(f => f.type === this.triageLevel);
+    return levels.find(f => f.type === this.triage_level);
   }
 }
