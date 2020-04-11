@@ -7,7 +7,7 @@ export class QuizModel extends Model implements IModel {
   public sex: string = "";
 
   @JsonProperty({ name: "age" })
-  public age: number = 0;
+  public age: number = undefined;
 
   @JsonProperty({ name: "evidence" })
   public evidence: EvidenceModel[] = [];

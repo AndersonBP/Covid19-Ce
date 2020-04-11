@@ -3,6 +3,7 @@
   max-width: 600px;
   display: flex;
   margin: 1em 1em 1em;
+  margin-bottom: 5em;
 }
 
 mat-card-content {
@@ -110,9 +111,89 @@ mat-card-content > p {
   margin-left: 1em;
 }
 
-form > .actions {
+.actions {
   margin-top: 2em;
 }
-form > .actions > button {
+
+.actions > button {
   margin-right: .5em;
+}
+
+.question-single {
+  display: flex;
+  flex-direction: column;
+}
+.question-single > mat-radio-button + mat-radio-button {
+  margin: 1em 0 0;
+}
+
+.single-label {
+  white-space: initial;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+}
+
+.triage {
+  margin: 0;
+}
+
+.triage > span {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.triage > p {
+  font-weight: 500;
+  margin: 1em 0;
+}
+
+.advice {
+  padding: .5em;
+  background: rgba(0,0,0,.05);
+  border: .5px solid rgba(0,0,0,.03);
+  border-radius: 4px;
+  margin-top: .5em;
+}
+
+.advice > p {
+  margin: 0;
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  margin: .5em 1em 0 0;
+}
+
+.notes > div {
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.notes > span {
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+.notes > div+div {
+  margin-top: 1em;
+}
+
+.single {
+  display: -webkit-box;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+}
+
+.single .option {
+  margin: 1em 0 0;
+}
+
+.option > mat-radio-group > mat-radio-button+mat-radio-button {
+  margin-left: 1em;
 }

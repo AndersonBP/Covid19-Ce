@@ -1,9 +1,10 @@
 import { Model } from '../../api/models/Model';
 import { ObjectMapper, JsonProperty } from 'json-object-mapper';
+import { QuestionModel } from './question.model';
 
 export class DiagnosisModel extends Model implements IModel {
   @JsonProperty({ name: "question" })
-  public question: any = null;
+  public question: QuestionModel = new QuestionModel();
 
   @JsonProperty({ name: "should_stop" })
   public should_stop: boolean = false;
