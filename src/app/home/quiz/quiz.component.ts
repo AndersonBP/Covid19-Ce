@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { DiagnosisModel } from 'src/app/core/services/infermedica/models/diagnosis.model';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+
 import { InfermedicaService } from 'src/app/core/services/infermedica/infermedica.service';
+
+import { DiagnosisModel } from 'src/app/core/services/infermedica/models/diagnosis.model';
 import { EvidenceModel } from 'src/app/core/services/infermedica/models/evidence.model';
 import { QuizModel } from 'src/app/core/services/infermedica/models/quiz.model';
 import { TriageModel } from 'src/app/core/services/infermedica/models/triage.model';
+import { InfoQuizComponent } from './info.quiz/info.quiz.component';
+import { concat } from 'rxjs';
 
 @Component({
   selector: 'home-quiz',
@@ -20,18 +25,23 @@ export class QuizComponent implements OnInit {
   sexes: any[];
   isLoading: boolean = false;
 
-  constructor(private quizService: InfermedicaService) { }
+  constructor(private quizService: InfermedicaService, public dialog: MatDialog) { }
 
   ngOnInit() {
-    this.quiz = new QuizModel();
     this.sexes = [{ value: 'male', label: 'Masculino' }, { value: 'female', label: 'Feminino' }];
     this.diagnosis = new DiagnosisModel();
   }
 
-  startQuiz() {
-    this.isReady = true;
+  requestData() {
+    const dialogRef = this.dialog.open(InfoQuizComponent, { data: {}, disableClose: true });
+
+    dialogRef.afterClosed().subscribe(res => {
+      this.quiz = QuizModel.Create({ age: res.age, sex: res.sex });
+
+      this.isReady = true;
 
     this.nextQuestion();
+    });
   }
 
   nextQuestion() {

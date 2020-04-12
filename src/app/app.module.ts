@@ -17,12 +17,12 @@ import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { BlockUIModule } from 'ng-block-ui';
 import { NgxLoadingModule } from 'ngx-loading';
 import { DatePipe } from '@angular/common';
-import { QuestionsComponent } from './home/questions/questions.component';
 import { AboutComponent } from './home/about/about.component';
 import { ChartsModule } from 'ng2-charts';
 import { environment } from '../environments/environment';
 import { InformativeComponent } from './home/informative/informative.component';
 import { QuizComponent } from './home/quiz/quiz.component';
+import { InfoQuizComponent } from './home/quiz/info.quiz/info.quiz.component';
 import { FormsModule } from '@angular/forms';
 import { from } from 'rxjs';
 
@@ -34,10 +34,13 @@ import { from } from 'rxjs';
     ChartComponent,
     DiagnoticPlaceComponent,
     DashboardComponent,
-    QuestionsComponent,
     AboutComponent,
     InformativeComponent,
-    QuizComponent
+    QuizComponent,
+    InfoQuizComponent,
+  ],
+  entryComponents: [
+    InfoQuizComponent
   ],
   imports: [
     ChartsModule,

@@ -15,33 +15,10 @@
           desenvolvida por nós. Para mais detalhes clique em <strong>Saiba mais</strong> logo abaixo.
         </p>
       </div>
-      <div *ngIf="!isStarted" class="quiz-start">
-        <strong>
-          Antes de começar, preencha os dados abaixo:
-        </strong>
-        <form #form="ngForm">
-          <div class="fields">
-            <mat-form-field>
-              <mat-label>Idade</mat-label>
-              <input matInput #age name="age" type="number" maxlength="3" placeholder="23" [(ngModel)]="quiz.age"
-                required>
-              <mat-hint align="end">{{age.value.length}} / 3</mat-hint>
-            </mat-form-field>
-            <div class="input-group">
-              <mat-label>Sexo</mat-label>
-              <mat-radio-group name="sex" [(ngModel)]="quiz.sex" required>
-                <mat-radio-button class="input-group-item" *ngFor="let sex of sexes" [value]="sex.value">
-                  {{sex.label}}
-                </mat-radio-button>
-              </mat-radio-group>
-            </div>
-          </div>
-          <div class="actions">
-            <button mat-raised-button [disabled]="!form.valid" (click)="startQuiz()" color="primary">Iniciar</button>
-            <a mat-raised-button href="https://developer.infermedica.com/docs/covid-19" target="_blank">Saiba
-              mais</a>
-          </div>
-        </form>
+      <div class="actions">
+        <button mat-raised-button (click)="requestData()" color="primary">Iniciar</button>
+        <a mat-raised-button href="https://developer.infermedica.com/docs/covid-19" target="_blank">Saiba
+          mais</a>
       </div>
     </mat-card-content>
   </mat-card>
@@ -96,7 +73,7 @@
         </div>
         <div class="actions">
           <button mat-raised-button [disabled]="!isValid()" (click)="nextQuestion()" color="primary">Continuar</button>
-          <button mat-raised-button [disabled] (click)="finishQuiz()" color="warn">Sair</button>
+          <button mat-raised-button [disabled] (click)="finishQuiz()">Sair</button>
         </div>
       </form>
     </mat-card-content>
@@ -115,9 +92,11 @@
       </div>
       <div *ngIf="triage.serious.length > 0" class="notes">
         <span>Observações</span>
-        <div *ngFor="let item of triage.serious">
-          <mat-icon *ngIf="item.is_emergency" aria-hidden="false">info</mat-icon>
-          <span>{{ item.name }}</span>
+        <div class="item-note">
+          <div *ngFor="let item of triage.serious">
+            <mat-icon *ngIf="item.is_emergency" aria-hidden="false">info</mat-icon>
+            <span>{{ item.name }}</span>
+          </div>
         </div>
       </div>
       <div class="actions">

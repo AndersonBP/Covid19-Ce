@@ -3,7 +3,7 @@
   max-width: 600px;
   display: flex;
   margin: 1em 1em 1em;
-  margin-bottom: 5em;
+  margin-bottom: 3em;
 }
 
 mat-card-content {
@@ -26,54 +26,6 @@ mat-card-content > p {
   font-weight: 500;
   color: #856404;
   margin: 0;
-}
-
-.quiz-start {
-  margin-top: 1em;
-}
-
-.quiz-start > form {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1em;
-}
-
-.quiz-start > form > div {
-  display: flex;
-}
-
-.quiz-start > form > .fields {
-  display: flex;
-  flex: 1;
-}
-
-.quiz-start > form > .actions {
-  justify-content: space-between;
-  margin-top: 2em;
-}
-
-.quiz-start > form > div > div {
-  flex: 2;
-  margin-left: 1em;
-}
-
-.quiz-start > form > mat-form-field {
-  width: 100%;
-  margin-bottom: 1em;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.input-group-item{
-  margin: 5px;
-}
-
-.submit {
-  float: right;
-  margin-top: 1em;
 }
 
 .quiz {
@@ -168,18 +120,28 @@ mat-card-content > p {
   margin: .5em 1em 0 0;
 }
 
-.notes > div {
-  margin-top: 1em;
+.notes > .item-note {
+  position: relative;
+  padding: .75rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  margin-top: .5em;
+}
+
+.notes > div > div {
   display: flex;
   align-items: center;
 }
 
 .notes > span {
   font-weight: 500;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
-.notes > div+div {
+.notes > div > div+div {
   margin-top: 1em;
 }
 

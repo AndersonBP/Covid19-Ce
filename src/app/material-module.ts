@@ -9,7 +9,8 @@ import {
   MatIconModule,
   MatButtonModule,
   MatRadioModule,
-  MatInputModule
+  MatInputModule,
+  MatDialogModule
 } from "@angular/material";
 import { NgModule } from "@angular/core";
 
@@ -25,7 +26,8 @@ import { NgModule } from "@angular/core";
     MatIconModule,
     MatButtonModule,
     MatRadioModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule {}
