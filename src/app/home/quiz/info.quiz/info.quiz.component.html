@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Antes de começar</h1>
+<div mat-dialog-content class="dialog">
+  <p>Informe sua idade e sexo solicitados abaixo:</p>
+  <mat-form-field>
+    <mat-label>Idade</mat-label>
+    <input matInput #age name="age" type="number" maxlength="3" placeholder="23" [(ngModel)]="data.age" required>
+    <mat-hint align="end">{{age.value.length}} / 3</mat-hint>
+  </mat-form-field>
+  <div class="input-group">
+    <mat-label>Sexo</mat-label>
+    <mat-radio-group name="sex" [(ngModel)]="data.sex" required>
+      <mat-radio-button class="input-group-item" *ngFor="let sex of sexes" [value]="sex.value">
+        {{sex.label}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="onExit()">Sair</button>
+  <button mat-button [disabled]="!data.age && !data.sex && data.sex" [mat-dialog-close]="data" color="primary" cdkFocusInitial>Continuar</button>
+</div>

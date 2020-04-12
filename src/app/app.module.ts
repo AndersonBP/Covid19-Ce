@@ -2,6 +2,7 @@ import { MaterialModule } from './material-module';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -16,11 +17,14 @@ import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { BlockUIModule } from 'ng-block-ui';
 import { NgxLoadingModule } from 'ngx-loading';
 import { DatePipe } from '@angular/common';
-import { QuestionsComponent } from './home/questions/questions.component';
 import { AboutComponent } from './home/about/about.component';
 import { ChartsModule } from 'ng2-charts';
 import { environment } from '../environments/environment';
 import { InformativeComponent } from './home/informative/informative.component';
+import { QuizComponent } from './home/quiz/quiz.component';
+import { InfoQuizComponent } from './home/quiz/info.quiz/info.quiz.component';
+import { FormsModule } from '@angular/forms';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -30,9 +34,13 @@ import { InformativeComponent } from './home/informative/informative.component';
     ChartComponent,
     DiagnoticPlaceComponent,
     DashboardComponent,
-    QuestionsComponent,
     AboutComponent,
-    InformativeComponent
+    InformativeComponent,
+    QuizComponent,
+    InfoQuizComponent,
+  ],
+  entryComponents: [
+    InfoQuizComponent
   ],
   imports: [
     ChartsModule,
@@ -45,6 +53,8 @@ import { InformativeComponent } from './home/informative/informative.component';
     BlockUIModule.forRoot(),
     NgxLoadingModule.forRoot({
     }),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

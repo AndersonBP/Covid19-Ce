@@ -22,6 +22,13 @@ export class DiagnoticPlaceComponent implements OnInit {
       coords: ['-3.7649216', '-38.5342946']
     },
     {
+      city: 'Fortaleza',
+      title: 'Hospital Leonardo Da Vinci',
+      phone: '(85) 3923-2300',
+      address: 'R. Rocha Lima, 1563 - Aldeota, Fortaleza - CE, 60135-285',
+      coords: ['-3.740292', '-38.510110']
+    },
+    {
       city: 'Juazeiro do Norte',
       title: 'Hospital Maternidade Sao Lucas',
       phone: '(88) 3587-3352',

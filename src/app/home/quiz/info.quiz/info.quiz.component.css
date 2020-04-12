@@ -1,0 +1,14 @@
+.dialog {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group-item{
+  margin: 5px;
+}

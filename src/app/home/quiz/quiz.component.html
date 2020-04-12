@@ -1,0 +1,107 @@
+<div class="container" *ngIf="!isLoading">
+  <mat-card *ngIf="!isReady && !diagnosis.should_stop">
+    <mat-card-header>
+      <mat-card-title>Questionário</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <p>
+        Se você sente alguns dos sintomas da doença COVID-19 (causada pelo coronavírus), responda um
+        rápido questionário e saiba quais medidas tomar.
+      </p>
+      <div class="warning">
+        <p>
+          Lembramos que todas as perguntas e respostas aqui trazidas são provenientes de uma <i>API REST</i> que não foi
+          desenvolvida por nós. Para mais detalhes clique em <strong>Saiba mais</strong> logo abaixo.
+        </p>
+      </div>
+      <div class="actions">
+        <button mat-raised-button (click)="requestData()" color="primary">Iniciar</button>
+        <a mat-raised-button href="https://developer.infermedica.com/docs/covid-19" target="_blank">Saiba
+          mais</a>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="quiz" *ngIf="isReady && !diagnosis.should_stop">
+    <mat-card-header>
+      <mat-card-title>{{ diagnosis.question.text }}</mat-card-title>
+      <mat-card-subtitle>{{ diagnosis.question.explanation || '' }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <form #formQuiz="ngForm">
+        <div *ngIf="diagnosis.question.type==='single'">
+          <div *ngFor="let item of diagnosis.question.items;">
+            <div class="single">
+              <span>Selecione uma opção: </span>
+              <div class="option">
+                <mat-radio-group>
+                  <mat-radio-button *ngFor="let choice of item.choices" [value]="choice.id"
+                    (change)="addEvidence({ id: item.id, choiceId: choice.id })">
+                    {{ choice.label }}
+                  </mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="diagnosis.question.type==='group_single'">
+          <mat-radio-group class="question-single">
+            <mat-radio-button *ngFor="let item of diagnosis.question.items;" [value]="item.id"
+              (change)="addEvidence({ id: item.id, choiceId: 'present' })">
+              <span class="single-label">{{ item.name }}</span>
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div *ngIf="diagnosis.question.type==='group_multiple'">
+          <div *ngFor="let item of diagnosis.question.items; let i = index">
+            <div [attr.for]="item.id" class="question">
+              <h3>{{ (i+1) + ': ' + item.name }}</h3>
+              <div *ngIf="item.explanation" class="info">
+                <p><strong>O que é isso? </strong>{{ item.explanation }}</p>
+              </div>
+              <div class="options">
+                <mat-radio-group>
+                  <mat-radio-button *ngFor="let choice of item.choices" [value]="choice.id"
+                    (change)="addEvidence({ id: item.id, choiceId: choice.id })">
+                    {{ choice.label }}
+                  </mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button mat-raised-button [disabled]="!isValid()" (click)="nextQuestion()" color="primary">Continuar</button>
+          <button mat-raised-button [disabled] (click)="finishQuiz()">Sair</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  <mat-card *ngIf="diagnosis.should_stop">
+    <mat-card-header>
+      <mat-card-title>Resultado do Quiz</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content class="result">
+      <div class="triage">
+        <div class="advice">
+          <p>{{ triage.label }}</p>
+        </div>
+        <p>{{ triage.description }}</p>
+      </div>
+      <div *ngIf="triage.serious.length > 0" class="notes">
+        <span>Observações</span>
+        <div class="item-note">
+          <div *ngFor="let item of triage.serious">
+            <mat-icon *ngIf="item.is_emergency" aria-hidden="false">info</mat-icon>
+            <span>{{ item.name }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <button mat-raised-button (click)="finishQuiz()" color="primary">Finalizar</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
